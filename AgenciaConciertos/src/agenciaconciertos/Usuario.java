@@ -8,7 +8,7 @@ package agenciaconciertos;
 /**
  *
  * @author DAW102
- * @version 1.0
+ * @version 1.01
  */
 public class Usuario {
     private String nombre, // nombre del usuario | valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros

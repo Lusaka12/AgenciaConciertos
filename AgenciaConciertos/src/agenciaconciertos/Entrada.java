@@ -8,7 +8,7 @@ package agenciaconciertos;
 /**
  *
  * @author DAW102
- * @version 1.0
+ * @version 1.01
  */
 public class Entrada {
     private String identificador;//atributo que sirve para identificar a la entrada | valores validos cadena de caracteres de 20 caracteres 
