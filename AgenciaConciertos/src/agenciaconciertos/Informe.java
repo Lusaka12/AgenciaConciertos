@@ -11,16 +11,16 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Informe {
-    private String identificador;//atributo que sirve para identificarel ID // valores validos cadena de caracteres de 20 caracteres
+    private long id;//atributo que sirve para identificarel ID //  valores validos numero entero mayor que 0
     private boolean revisado;//Campo para indicar si está revisado o no // valores validos true o false. 
     private String descripcion;//atributo que sirve para guardar la descripcion // valores validos cadena de caracteres de 20 caracteres
 
-    public String getIdentificador() {
-        return identificador;
+    public long getId() {
+        return id;
     }
 
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public boolean isRevisado() {
@@ -39,13 +39,13 @@ public class Informe {
         this.descripcion = descripcion;
     }
 
-    public Informe(String identificador, boolean revisado, String descripcion) {
-        this.identificador = identificador;
+    public Informe(long identificador, boolean revisado, String descripcion) {
+        this.id = identificador;
         this.revisado = revisado;
         this.descripcion = descripcion;
     }
    public Informe (Informe i) {
-        this.identificador = i.getIdentificador();
+        this.id = i.getId();
         this.revisado = i.isRevisado();
         this.descripcion = i.getDescripcion();
    }    
@@ -55,11 +55,11 @@ public class Informe {
 
     @Override
     public String toString() {
-        return "Informe{" + "identificador=" + identificador + ", revisado=" + revisado + ", descripcion=" + descripcion + '}';
+        return "Informe{" + "identificador=" + id + ", revisado=" + revisado + ", descripcion=" + descripcion + '}';
     }
    public String data() {
        
-       return "el identificador es " +this.getIdentificador()+" | " + "¿Está revisado? " +this.isRevisado()+ " | " + "Descripcion del informe: " +this.getDescripcion();
+       return this.getId()+"|"+this.isRevisado()+"|"+this.getDescripcion();
              
    }
    

@@ -11,16 +11,16 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Gira {
-    private String identificador;//atributo que sirve para identificar a la gira // valores validos cadena de caracteres de 20 caracteres
+    private long id;//atributo que sirve para identificar a la gira //  valores validos numero entero mayor que 0
     private String fechaApertura;//atributo que sirve para identificar la fecha de apertura// valores validos cadena de caracteres de 20 caracteres
     private String fechaCierre;//atributo que sirve para identificar la fecha de cierre // valores validos cadena de caracteres de 20 caracteres
 
-    public String getIdentificador() {
-        return identificador;
+    public long getId() {
+        return id;
     }
 
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFechaApertura() {
@@ -39,14 +39,14 @@ public class Gira {
         this.fechaCierre = fechaCierre;
     }
 
-    public Gira(String identificador, String fechaApertura, String fechaCierre) {
-        this.identificador = identificador;
+    public Gira(long identificador, String fechaApertura, String fechaCierre) {
+        this.id = identificador;
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
     }
     
      public Gira(Gira g) {
-        this.identificador = g.getIdentificador();
+        this.id = g.getId();
         this.fechaApertura = g.getFechaApertura();
         this.fechaCierre = g.getFechaCierre();
      }
@@ -56,12 +56,12 @@ public class Gira {
 
     @Override
     public String toString() {
-        return "Gira" + "identificador=" + identificador + ", fechaApertura=" + fechaApertura + ", fechaCierre=" + fechaCierre + '}';
+        return "Gira" + "identificador=" + id + ", fechaApertura=" + fechaApertura + ", fechaCierre=" + fechaCierre + '}';
     }
     
     public String data(){
         
-        return "el identificador es " +this.getIdentificador()+" | " + "la fecha de apetura es " +this.getFechaApertura()+ " | " + "la fecha de cierre es " +this.getFechaCierre();
+        return this.getId()+"|" +this.getFechaApertura()+ "|"+this.getFechaCierre();
        
     }
 }

@@ -81,13 +81,8 @@ public class Usuario {
     }
     
     public String data() {
-        String auxiliar="";
-        if(verificado){
-            auxiliar="si";
-        }else{
-            auxiliar="no";
-        }
-        return "el nombre es "+this.getNombre()+ " | " + "los apellidos son " + this.getApellidos() + " | " + "el email es "+this.getEmail()
-             + " | " + "el nif es "+ this.getNIF() +" | "+"¿está el usuario verificado? "+auxiliar;
+        
+        return this.getNombre()+"|" + this.getApellidos() + "|"+this.getEmail()
+             + "|" + this.getNIF() +"|"+this.getVerificado();
     }
 }

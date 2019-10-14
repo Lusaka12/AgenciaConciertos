@@ -11,12 +11,12 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Actuacion {
-    private String identificador; //atributo que sirve para identificar a la actuacion // valores validos cadena de caracteres de 20 caracteres 
+    private String id; //atributo que sirve para identificar a la actuacion // valores validos numero entero mayor que 0
     private int numeroSecuencia; // numero de actuacion que forma parte del concierto // valores validos hasta el numero maximo de actuaciones en el concierto
     private int duracion; //numero de minutos que dura la acutacion // valores validos hasta el numero maximo de minutos que dura la actuacion
 
-    public String getIdentificador() {
-        return identificador;
+    public String getId() {
+        return id;
     }
     
     public int getNumeroSecuencia() {
@@ -27,8 +27,8 @@ public class Actuacion {
         return duracion;
     }
     
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setId(String id) {
+        this.id = id;
     }
     
     public void setNumeroSecuencia(int numeroSecuencia) {
@@ -40,12 +40,12 @@ public class Actuacion {
     }
     
     public Actuacion(String identificador, int numeroSecuencia, int duracion) {
-        this.identificador = identificador;
+        this.id = identificador;
         this.numeroSecuencia = numeroSecuencia;
         this.duracion = duracion;                  
     }
     public Actuacion(Actuacion a) {
-        this.identificador = a.getIdentificador();
+        this.id = a.getId();
         this.numeroSecuencia = a.getNumeroSecuencia();
         this.duracion = a.getDuracion();        
     }
@@ -54,11 +54,11 @@ public class Actuacion {
     
     @Override
     public String toString() {
-        return "Actuacion{" + "identificador=" + identificador + ", numeroSecuencia=" + numeroSecuencia + ", duracion" + duracion + '}';
+        return "Actuacion{" + "identificador=" + id + ", numeroSecuencia=" + numeroSecuencia + ", duracion" + duracion + '}';
     }
     
     public String data() {
-        return "el identificador es "+this.getIdentificador()+" | "+"el numero de secuencia es "+this.getNumeroSecuencia()+" | "+"la acutuacion va a durar "+this.getDuracion();
+        return this.getId()+"|"+this.getNumeroSecuencia()+"|"+this.getDuracion();
     }
 }
         

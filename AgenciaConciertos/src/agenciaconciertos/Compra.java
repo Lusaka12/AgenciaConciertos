@@ -12,7 +12,7 @@ package agenciaconciertos;
  */
 public class Compra {
     private int numEntradas;//numero de entradas de la compra | valores validos hasta el maximo numero de entradas del concierto.
-    private String identificador;//atributo que sirve para identificar a la compra | valores validos cadena de caracteres de 20 caracteres 
+    private long id;//atributo que sirve para identificar a la compra |  valores validos numero entero mayor que 0
     private double precioTotal;//precio que se pagara , se calculara a partir del precio de la entrada y numEntradas de la compra
     //valores validos de precio un numero entero o real mayor que 0
     private String metodoPago;//atributo que guarda el metodo de pago | valores validos podran ser en efectivo y con tarjeta
@@ -25,8 +25,8 @@ public class Compra {
         return numEntradas;
     }
 
-    public String getIdentificador() {
-        return identificador;
+    public long getId() {
+        return id;
     }
 
     public double getPrecioTotal() {
@@ -45,8 +45,8 @@ public class Compra {
         this.numEntradas = numEntradas;
     }
 
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setPrecioTotal(double precioTotal) {
@@ -57,16 +57,16 @@ public class Compra {
         this.metodoPago = metodoPago;
     }
 
-    public Compra(int numEntradas, String identificador, double precioTotal, String metodoPago,String codigoDescuento) {
+    public Compra(int numEntradas, long identificador, double precioTotal, String metodoPago,String codigoDescuento) {
         this.numEntradas = numEntradas;
-        this.identificador = identificador;
+        this.id = identificador;
         this.precioTotal = precioTotal;
         this.metodoPago = metodoPago;
         this.codigoDescuento=codigoDescuento;
     }
     public Compra(Compra c) {
         this.numEntradas = c.getNumEntradas();
-        this.identificador = c.getIdentificador();
+        this.id = c.getId();
         this.precioTotal = c.getPrecioTotal();
         this.metodoPago = c.getMetodoPago();
         this.codigoDescuento=c.getCodigoDescuento();
@@ -76,20 +76,15 @@ public class Compra {
 
     @Override
     public String toString() {
-        return "Compra{" + "numEntradas=" + numEntradas + ", identificador=" + identificador + ", precioTotal=" + precioTotal + ", metodoPago=" + metodoPago + ", codigoDescuento=" + codigoDescuento + '}';
+        return "Compra{" + "numEntradas=" + numEntradas + ", identificador=" + id + ", precioTotal=" + precioTotal + ", metodoPago=" + metodoPago + ", codigoDescuento=" + codigoDescuento + '}';
     }
 
    
     
     public String data() {
-        String aux="";
-        if(codigoDescuento==""){
-               aux="no se ha usado un codigo descuento";
-        }else{
-               aux="se ha aportado un codigo que es "+codigoDescuento;
-        }
-        return "el identificador es "+this.getIdentificador()+" | "+"el numero de entradas es "+this.getNumEntradas()+" | "+"el precio total de la compra es "+
-                this.getPrecioTotal() +" | "+"el metodo de pago es  "+this.getMetodoPago()+" | "+aux;
+      
+        return this.getId()+"|"+this.getNumEntradas()+"|"+
+                this.getPrecioTotal() +"|"+this.getMetodoPago()+"|"+this.getCodigoDescuento();
     }
     
     

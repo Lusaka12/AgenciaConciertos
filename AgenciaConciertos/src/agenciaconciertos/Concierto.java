@@ -11,16 +11,16 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Concierto {
-    private String identificador; //atributo que sirve para identificar al concierto // valores validos cadena de caracteres de 20 caracteres
+    private long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
     private String fecha; //atributo que sirve para idenfiticar la fecha del concierto// valores validos cadena de caracteres de 20 caracteres
     private String hora; //atributo que sirve para idenfiticar la hora del concierto//valores validos cadena de caracteres de 20 caracteres
 
-    public String getIdentificador() {
-        return identificador;
+    public long getId() {
+        return id;
     }
 
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFecha() {
@@ -39,14 +39,14 @@ public class Concierto {
         this.hora = hora;
     }
 
-    public Concierto(String identificador, String fecha, String hora) {
-        this.identificador = identificador;
+    public Concierto(long identificador, String fecha, String hora) {
+        this.id = identificador;
         this.fecha = fecha;
         this.hora = hora;
         }
     
     public Concierto(Concierto c) {
-        this.identificador = c.getIdentificador();
+        this.id = c.getId();
         this.fecha = c.getFecha();
         this.hora = c.getHora();
     }
@@ -56,12 +56,12 @@ public class Concierto {
 
     @Override
     public String toString() {
-        return "Concierto{" + "identificador=" + identificador + ", fecha=" + fecha + ", hora=" + hora + '}';
+        return "Concierto{" + "identificador=" + id + ", fecha=" + fecha + ", hora=" + hora + '}';
     }
    
     public String data() {
         
-        return "el identificador es " +this.getIdentificador()+" | " + "la fecha es " +this.getFecha()+" | "+"la actuacion será a las "+this.getHora();
+        return this.getId()+"|"+this.getFecha()+"|"+this.getHora();
     }
 }
 

@@ -58,13 +58,8 @@ public class Descuento {
     }
     
     public String data() {
-        String aux="";
-        if(codigoDescuento==""){
-               aux="no se ha usado un codigo descuento";
-        }else{
-               aux="se ha aportado un codigo que es "+codigoDescuento;
-        }
-        return "la fecha de validez es hasta el "+this.getFechaValidez()+" | " +"la cantidad descontada es de "+this.getCantidadDescontada()+" | +"+aux;
+    
+        return this.getFechaValidez()+"|"+this.getCantidadDescontada()+"|"+this.getCodigoDescuento();
     }
 
 }

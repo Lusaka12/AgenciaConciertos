@@ -12,7 +12,7 @@ package agenciaconciertos;
  */
 public class Reserva {
     private int numEntradas; //numero de entradas de la compra | valores validos hasta el maximo numero de entradas del concierto.
-    private String identificador; //atributo que sirve para identificar a la compra | valores validos cadena de caracteres de 20 caracteres 
+    private long id; //atributo que sirve para identificar a la compra |  valores validos numero entero mayor que 0
     private String fechaMaxima; // Limite para reservar la entrada // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     private String codigoDescuento; //contiene un codigo de descuento que puede ser valido| valores validos "" si no se ha aportado ningun codigo y un codigo si se ha aportado
             
@@ -20,8 +20,8 @@ public class Reserva {
         return numEntradas;
     }
     
-    public String getIdentificador(){
-        return identificador;
+    public long getId(){
+        return id;
     }
     
     public String getFechaMaxima(){
@@ -36,8 +36,8 @@ public class Reserva {
         this.numEntradas = numEntradas;
     }
     
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setId(long id) {
+        this.id = id;
     }
     
     public void setFechaMaxima(String fechaMaxima) {
@@ -48,15 +48,15 @@ public class Reserva {
         this.codigoDescuento = codigoDescuento;
     }
     
-    public Reserva(int numEntradas, String identificador, String fechaMaxima, String codigoDescuento) {
+    public Reserva(int numEntradas, long identificador, String fechaMaxima, String codigoDescuento) {
         this.numEntradas = numEntradas;
-        this.identificador = identificador;
+        this.id = identificador;
         this.fechaMaxima = fechaMaxima;
         this.codigoDescuento = codigoDescuento;
     }
     public Reserva(Reserva r) {
         this.numEntradas = r.getNumEntradas();
-        this.identificador = r.getIdentificador();
+        this.id = r.getId();
         this.fechaMaxima = r.getFechaMaxima();
         this.codigoDescuento = r.getCodigoDescuento();
     }
@@ -65,18 +65,12 @@ public class Reserva {
     
     @Override
     public String toString() {
-        return "Reserva{" + "numEntradas=" + numEntradas + ", identificador=" + identificador + ", fechaMaxima=" + fechaMaxima + ", codigoDescuento=" + codigoDescuento + '}';
+        return "Reserva{" + "numEntradas=" + numEntradas + ", identificador=" + id + ", fechaMaxima=" + fechaMaxima + ", codigoDescuento=" + codigoDescuento + '}';
     }
     
     public String data() {
-        String aux="";
-        if(codigoDescuento==""){
-               aux="no se ha usado un codigo descuento";
-        }else{
-               aux="se ha aportado un codigo que es "+codigoDescuento;
-        }
-        return "el numero de entradas es "+this.getNumEntradas()+" | "+"el identificador es "+this.getIdentificador()+" | "+"la fecha maxima es hasta el "+
-            this.getFechaMaxima() +" | "+" el codigo descuento es "+this.getCodigoDescuento()+" | +"+aux;
+        return this.getNumEntradas()+"|"+this.getId()+"|"+
+            this.getFechaMaxima()+"|"+this.getCodigoDescuento()+"|"+this.getCodigoDescuento();
     }
  
 }

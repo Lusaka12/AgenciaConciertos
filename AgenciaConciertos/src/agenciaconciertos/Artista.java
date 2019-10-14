@@ -10,12 +10,12 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Artista {
-    private String identificador ,//atributo que sirve para identificar al artista | valores validos cadena de caracteres de 20 caracteres
-            nombreArtistico //nombre artistico del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
+    private long id;//atributo que sirve para identificar al artista |  valores validos numero entero mayor que 0
+    private String  nombreArtistico //nombre artistico del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
             ,generoMusica; //genero de musica del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
 
-    public String getIdentificador() {
-        return identificador;
+    public long getId() {
+        return id;
     }
 
     public String getNombreArtistico() {
@@ -26,8 +26,8 @@ public class Artista {
         return generoMusica;
     }
 
-    public void setIdentificador(String identificador) {
-        this.identificador = identificador;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setNombreArtistico(String nombreArtistico) {
@@ -38,13 +38,13 @@ public class Artista {
         this.generoMusica = generoMusica;
     }
 
-    public Artista(String identificador, String nombreArtistico, String generoMusica) {
-        this.identificador = identificador;
+    public Artista(long identificador, String nombreArtistico, String generoMusica) {
+        this.id = identificador;
         this.nombreArtistico = nombreArtistico;
         this.generoMusica = generoMusica;
     }
      public Artista(Artista a) {
-        this.identificador = a.getIdentificador();
+        this.id = a.getId();
         this.nombreArtistico = a.getNombreArtistico();
         this.generoMusica = a.getGeneroMusica();
     }
@@ -53,10 +53,10 @@ public class Artista {
 
     @Override
     public String toString() {
-        return "Artista{" + "identificador=" + identificador + ", nombreArtistico=" + nombreArtistico + ", generoMusica=" + generoMusica + '}';
+        return "Artista{" + "identificador=" + id + ", nombreArtistico=" + nombreArtistico + ", generoMusica=" + generoMusica + '}';
     }
     
-    public String data() {
-        return"el identificador es "+this.getIdentificador()+" | "+"el nombre artistico es "+this.getNombreArtistico()+" | "+"el genero musical es"+this.getGeneroMusica();
+    public String data() { 
+        return this.getId()+"|"+this.getNombreArtistico()+"|"+this.getGeneroMusica();
     }
 }
