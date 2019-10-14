@@ -8,6 +8,7 @@ package agenciaconciertos;
 /**
  *
  * @author DAW113
+ * @version 1.01
  */
 public class Descuento {
     private String codigoDescuento; // identificar el código de descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros

@@ -8,6 +8,7 @@ package agenciaconciertos;
 /**
  *
  * @author DAW113
+ * @version 1.01
  */
 public class Reserva {
     private int numEntradas; //numero de entradas de la compra | valores validos hasta el maximo numero de entradas del concierto.
