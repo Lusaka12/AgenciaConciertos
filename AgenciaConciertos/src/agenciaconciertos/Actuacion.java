@@ -8,6 +8,7 @@ package agenciaconciertos;
 /**
  *
  * @author Usuario
+ * @version 0.01
  */
 public class Actuacion {
     private String identificador; //atributo que sirve para identificar a la actuacion // valores validos cadena de caracteres de 20 caracteres 
