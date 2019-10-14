@@ -39,8 +39,8 @@ public class Concierto {
         this.hora = hora;
     }
 
-    public Concierto(long identificador, String fecha, String hora) {
-        this.id = identificador;
+    public Concierto(long id, String fecha, String hora) {
+        this.id = id;
         this.fecha = fecha;
         this.hora = hora;
         }

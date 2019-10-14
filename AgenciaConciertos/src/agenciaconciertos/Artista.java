@@ -38,8 +38,8 @@ public class Artista {
         this.generoMusica = generoMusica;
     }
 
-    public Artista(long identificador, String nombreArtistico, String generoMusica) {
-        this.id = identificador;
+    public Artista(long id, String nombreArtistico, String generoMusica) {
+        this.id = id;
         this.nombreArtistico = nombreArtistico;
         this.generoMusica = generoMusica;
     }

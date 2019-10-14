@@ -39,8 +39,8 @@ public class Gira {
         this.fechaCierre = fechaCierre;
     }
 
-    public Gira(long identificador, String fechaApertura, String fechaCierre) {
-        this.id = identificador;
+    public Gira(long id, String fechaApertura, String fechaCierre) {
+        this.id = id;
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
     }

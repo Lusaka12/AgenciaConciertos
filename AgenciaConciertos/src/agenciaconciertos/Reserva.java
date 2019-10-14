@@ -48,9 +48,9 @@ public class Reserva {
         this.codigoDescuento = codigoDescuento;
     }
     
-    public Reserva(int numEntradas, long identificador, String fechaMaxima, String codigoDescuento) {
+    public Reserva(int numEntradas, long id, String fechaMaxima, String codigoDescuento) {
         this.numEntradas = numEntradas;
-        this.id = identificador;
+        this.id = id;
         this.fechaMaxima = fechaMaxima;
         this.codigoDescuento = codigoDescuento;
     }

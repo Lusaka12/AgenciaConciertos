@@ -57,9 +57,9 @@ public class Compra {
         this.metodoPago = metodoPago;
     }
 
-    public Compra(int numEntradas, long identificador, double precioTotal, String metodoPago,String codigoDescuento) {
+    public Compra(int numEntradas, long id, double precioTotal, String metodoPago,String codigoDescuento) {
         this.numEntradas = numEntradas;
-        this.id = identificador;
+        this.id = id;
         this.precioTotal = precioTotal;
         this.metodoPago = metodoPago;
         this.codigoDescuento=codigoDescuento;

@@ -11,12 +11,12 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Entrada {
-    private long identificador;//atributo que sirve para identificar a la entrada |  valores validos numero entero mayor que 0
+    private long id;//atributo que sirve para identificar a la entrada |  valores validos numero entero mayor que 0
     private double precio; // precio de la entrada | valores validos un numero real o entero mayor que 0
     private boolean esVIP;//atributo que indica si el usuario es vip o no | valores validos true cuando si es vip o false cuando no lo es
 
-    public long getIdentificador() {
-        return identificador;
+    public long getId() {
+        return id;
     }
 
     public double getPrecio() {
@@ -27,8 +27,8 @@ public class Entrada {
         return esVIP;
     }
 
-    public void setIdentificador(long identificador) {
-        this.identificador = identificador;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setPrecio(double precio) {
@@ -40,22 +40,22 @@ public class Entrada {
     }
 
     public Entrada(long identificador, double precio, boolean esVIP) {
-        this.identificador = identificador;
+        this.id = identificador;
         this.precio = precio;
         this.esVIP = esVIP;
     }
      public Entrada(Entrada e) {
-        this.identificador = e.getIdentificador();
+        this.id = e.getId();
         this.precio = e.getPrecio();
         this.esVIP = e.getEsVIP();
     }
 
     @Override
     public String toString() {
-        return "Entrada{" + "identificador=" + identificador + ", precio=" + precio + ", esVIP=" + esVIP + '}';
+        return "Entrada{" + "identificador=" + id + ", precio=" + precio + ", esVIP=" + esVIP + '}';
     }
     public String data() {
        
-        return this.getIdentificador()+"|"+this.getPrecio()+"|"+this.getEsVIP();
+        return this.getId()+"|"+this.getPrecio()+"|"+this.getEsVIP();
     }
 }

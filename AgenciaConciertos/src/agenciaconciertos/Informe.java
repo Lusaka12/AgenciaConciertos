@@ -39,8 +39,8 @@ public class Informe {
         this.descripcion = descripcion;
     }
 
-    public Informe(long identificador, boolean revisado, String descripcion) {
-        this.id = identificador;
+    public Informe(long id, boolean revisado, String descripcion) {
+        this.id = id;
         this.revisado = revisado;
         this.descripcion = descripcion;
     }
