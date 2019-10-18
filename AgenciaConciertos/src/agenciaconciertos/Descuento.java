@@ -13,8 +13,7 @@ package agenciaconciertos;
 public class Descuento {
     private String codigoDescuento; // identificar el código de descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     private String fechaValidez; // Cuando va a caducar el codigo descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
-    private double cantidadDescontada; // Cantidad que se descontará, se calculará restando el precio total menos el codigo descuento
-
+    private double cantidadDescontada; // Cantidad que se descontará, se calculará restando el precio total menos el codigo descuento // valore validos un numero entero mayor que 0
     public String getCodigoDescuento() {
         return codigoDescuento;
     }

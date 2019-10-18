@@ -14,7 +14,15 @@ public class Gira {
     private long id;//atributo que sirve para identificar a la gira //  valores validos numero entero mayor que 0
     private String fechaApertura;//atributo que sirve para identificar la fecha de apertura// valores validos cadena de caracteres de 20 caracteres
     private String fechaCierre;//atributo que sirve para identificar la fecha de cierre // valores validos cadena de caracteres de 20 caracteres
+    private String nombre;
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombreNegociar(String nombreNegociar) {
+        this.nombre = nombre;
+    }
     public long getId() {
         return id;
     }
@@ -39,10 +47,11 @@ public class Gira {
         this.fechaCierre = fechaCierre;
     }
 
-    public Gira(long id, String fechaApertura, String fechaCierre) {
+    public Gira(long id, String fechaApertura, String fechaCierre,String nombre) {
         this.id = id;
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
+        this.nombre=nombre;
     }
     
      public Gira(Gira g) {
@@ -56,12 +65,12 @@ public class Gira {
 
     @Override
     public String toString() {
-        return "Gira" + "identificador=" + id + ", fechaApertura=" + fechaApertura + ", fechaCierre=" + fechaCierre + '}';
+        return "Gira" + "identificador=" + id + ", fechaApertura=" + fechaApertura + ", fechaCierre=" + fechaCierre + ", nombre="+nombre+'}';
     }
     
     public String data(){
         
-        return this.getId()+"|" +this.getFechaApertura()+ "|"+this.getFechaCierre();
+        return this.getId()+"|" +this.getFechaApertura()+ "|"+this.getFechaCierre()+"|"+this.getNombre();
        
     }
 }

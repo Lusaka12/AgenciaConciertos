@@ -11,7 +11,7 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Actuacion {
-    private long id; //atributo que sirve para identificar a la actuacion // valores validos numero entero mayor que 0
+    public long id; //atributo que sirve para identificar a la actuacion // valores validos numero entero mayor que 0
     private int numeroSecuencia; // numero de actuacion que forma parte del concierto // valores validos hasta el numero maximo de actuaciones en el concierto
     private int duracion; //numero de minutos que dura la actuacion // valores validos hasta el numero maximo de minutos que dura la actuacion
 
