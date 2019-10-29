@@ -12,7 +12,7 @@ import java.sql.Date;
  * @version 1.01
  */
 public class Concierto {
-    private long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
+    protected long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
     private Date fechaHora; //atributo que sirve para idenfiticar la fechaHora y la hora del concierto// valores validos cadena de caracteres de 20 caracteres
                               
     
@@ -32,13 +32,11 @@ public class Concierto {
         this.fechaHora = fechaHora;
     }
 
-    public Concierto(long id, Date fechaHora) {
-        this.id = id;
+    public Concierto(Date fechaHora) {
         this.fechaHora = fechaHora;
         }
     
     public Concierto(Concierto c) {
-        this.id = c.getId();
         this.fechaHora = c.getFechaHora();   
     }
     

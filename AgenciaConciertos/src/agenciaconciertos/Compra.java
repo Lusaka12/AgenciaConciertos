@@ -12,7 +12,7 @@ package agenciaconciertos;
  */
 public class Compra {
     private int numEntradas;//numero de entradas de la compra | valores validos hasta el maximo numero de entradas del concierto.
-    private long id;//atributo que sirve para identificar a la compra |  valores validos numero entero mayor que 0
+    protected long id;//atributo que sirve para identificar a la compra |  valores validos numero entero mayor que 0
     private double precioTotal;//precio que se pagara , se calculara a partir del precio de la entrada y numEntradas de la compra
     //valores validos de precio un numero entero o real mayor que 0
     private String metodoPago;//atributo que guarda el metodo de pago | valores validos podran ser en efectivo y con tarjeta
@@ -57,16 +57,14 @@ public class Compra {
         this.metodoPago = metodoPago;
     }
 
-    public Compra(int numEntradas, long id, double precioTotal, String metodoPago,String codigoDescuento) {
+    public Compra(int numEntradas, double precioTotal, String metodoPago,String codigoDescuento) {
         this.numEntradas = numEntradas;
-        this.id = id;
         this.precioTotal = precioTotal;
         this.metodoPago = metodoPago;
         this.codigoDescuento=codigoDescuento;
     }
     public Compra(Compra c) {
         this.numEntradas = c.getNumEntradas();
-        this.id = c.getId();
         this.precioTotal = c.getPrecioTotal();
         this.metodoPago = c.getMetodoPago();
         this.codigoDescuento=c.getCodigoDescuento();

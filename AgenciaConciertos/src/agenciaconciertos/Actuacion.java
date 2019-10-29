@@ -11,7 +11,7 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Actuacion {
-    public long id; //atributo que sirve para identificar a la actuacion // valores validos numero entero mayor que 0
+    protected long id; //atributo que sirve para identificar a la actuacion // valores validos numero entero mayor que 0
     private int numeroSecuencia; // numero de actuacion que forma parte del concierto // valores validos hasta el numero maximo de actuaciones en el concierto
     private int duracion; //numero de minutos que dura la actuacion // valores validos hasta el numero maximo de minutos que dura la actuacion
 
@@ -40,12 +40,10 @@ public class Actuacion {
     }
     
     public Actuacion(long id, int numeroSecuencia, int duracion) {
-        this.id = id;
         this.numeroSecuencia = numeroSecuencia;
         this.duracion = duracion;                  
     }
     public Actuacion(Actuacion a) {
-        this.id = a.getId();
         this.numeroSecuencia = a.getNumeroSecuencia();
         this.duracion = a.getDuracion();        
     }
