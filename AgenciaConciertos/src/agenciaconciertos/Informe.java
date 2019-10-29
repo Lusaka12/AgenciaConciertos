@@ -11,7 +11,7 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Informe {
-    private long id;//atributo que sirve para identificarel ID //  valores validos numero entero mayor que 0
+    protected long id;//atributo que sirve para identificarel ID //  valores validos numero entero mayor que 0
     private boolean revisado;//Campo para indicar si está revisado o no // valores validos true o false. 
     private String descripcion;//atributo que sirve para guardar la descripcion // valores validos cadena de caracteres de 20 caracteres
 
@@ -39,13 +39,11 @@ public class Informe {
         this.descripcion = descripcion;
     }
 
-    public Informe(long id, boolean revisado, String descripcion) {
-        this.id = id;
+    public Informe(boolean revisado, String descripcion) {
         this.revisado = revisado;
         this.descripcion = descripcion;
     }
    public Informe (Informe i) {
-        this.id = i.getId();
         this.revisado = i.isRevisado();
         this.descripcion = i.getDescripcion();
    }    

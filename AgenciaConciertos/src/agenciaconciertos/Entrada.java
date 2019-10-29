@@ -11,7 +11,7 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Entrada {
-    private long id;//atributo que sirve para identificar a la entrada |  valores validos numero entero mayor que 0
+    protected long id;//atributo que sirve para identificar a la entrada |  valores validos numero entero mayor que 0
     private double precio; // precio de la entrada | valores validos un numero real o entero mayor que 0
     private boolean esVIP;//atributo que indica si el usuario es vip o no | valores validos true cuando si es vip o false cuando no lo es
 
@@ -39,13 +39,11 @@ public class Entrada {
         this.esVIP = esVIP;
     }
 
-    public Entrada(long identificador, double precio, boolean esVIP) {
-        this.id = identificador;
+    public Entrada(double precio, boolean esVIP) {
         this.precio = precio;
         this.esVIP = esVIP;
     }
      public Entrada(Entrada e) {
-        this.id = e.getId();
         this.precio = e.getPrecio();
         this.esVIP = e.getEsVIP();
     }

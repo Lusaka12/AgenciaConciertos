@@ -11,12 +11,17 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Usuario {
+    protected long id;
     private String nombre, // nombre del usuario | valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
             apellidos, // apellidos del usuario | valores validos cadena de caracteres de 40 caracteres pudiendo tener simbolos y numeros
             email, // correo electronico del usuario | valores validos cadena de caracters de 40 caracteres pudiendo tener simbolos y numeros
             NIF; // el NIF del usuario | valores validos cadena de caracters de 8 caracteres siendo los 7 de primeros  ellos numeros 
                  // y el ultimo una letra no pudiendo tener simbolos 
     private boolean verificado;//atributo que indica si el usuario ha sido verificado | valores validos true cuando si esta verificado o false cuando no lo esta
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -38,6 +43,10 @@ public class Usuario {
         this.verificado = verificado;
     }
 
+    public long getId() {
+        return id;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -82,7 +91,7 @@ public class Usuario {
     
     public String data() {
         
-        return this.getNombre()+"|" + this.getApellidos() + "|"+this.getEmail()
+        return this.getId()+"|"+this.getNombre()+"|" + this.getApellidos() + "|"+this.getEmail()
              + "|" + this.getNIF() +"|"+this.getVerificado();
     }
 }

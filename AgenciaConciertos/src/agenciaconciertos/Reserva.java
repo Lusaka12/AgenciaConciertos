@@ -12,7 +12,7 @@ import java.sql.Date;
  */
 public class Reserva {
     private int numEntradas; //numero de entradas de la compra | valores validos hasta el maximo numero de entradas del concierto.
-    private long id; //atributo que sirve para identificar a la compra |  valores validos numero entero mayor que 0
+    protected long id; //atributo que sirve para identificar a la compra |  valores validos numero entero mayor que 0
     public Date fechaMaxima; // Limite para reservar la entrada // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     private String codigoDescuento; //contiene un codigo de descuento que puede ser valido| valores validos "" si no se ha aportado ningun codigo y un codigo si se ha aportado
             
@@ -48,9 +48,8 @@ public class Reserva {
         this.codigoDescuento = codigoDescuento;
     }
     
-    public Reserva(int numEntradas, long id, Date fechaMaxima, String codigoDescuento) {
+    public Reserva(int numEntradas, Date fechaMaxima, String codigoDescuento) {
         this.numEntradas = numEntradas;
-        this.id = id;
         this.fechaMaxima = fechaMaxima;
         this.codigoDescuento = codigoDescuento;
     }

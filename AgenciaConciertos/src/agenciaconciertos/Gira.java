@@ -11,7 +11,7 @@ import java.sql.Date;
  * @version 1.01
  */
 public class Gira {
-    private long id;//atributo que sirve para identificar a la gira //  valores validos numero entero mayor que 0
+    protected long id;//atributo que sirve para identificar a la gira //  valores validos numero entero mayor que 0
     public Date fechaApertura;//atributo que sirve para identificar la fecha de apertura// valores validos cadena de caracteres de 20 caracteres
     public Date fechaCierre;//atributo que sirve para identificar la fecha de cierre // valores validos cadena de caracteres de 20 caracteres
     private String nombre;
@@ -48,15 +48,13 @@ public class Gira {
         this.fechaCierre = fechaCierre;
     }
 
-    public Gira(long id, Date fechaApertura, Date fechaCierre,String nombre) {
-        this.id = id;
+    public Gira(Date fechaApertura, Date fechaCierre,String nombre) {
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
         this.nombre=nombre;
     }
     
      public Gira(Gira g) {
-        this.id = g.getId();
         this.fechaApertura = g.getFechaApertura();
         this.fechaCierre = g.getFechaCierre();
      }

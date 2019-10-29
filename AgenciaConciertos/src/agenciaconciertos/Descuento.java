@@ -12,11 +12,16 @@ import java.sql.Date;
  * @version 1.01
  */
 public class Descuento {
+    protected long id;
     private String codigoDescuento; // identificar el código de descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     public Date fechaValidez; // Cuando va a caducar el codigo descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     private double cantidadDescontada; // Cantidad que se descontará, se calculará restando el precio total menos el codigo descuento // valores validos un numero entero mayor que 0
     public String getCodigoDescuento() {
         return codigoDescuento;
+    }
+
+    public long getId() {
+        return id;
     }
     
     public Date getFechaValidez() {
@@ -27,6 +32,10 @@ public class Descuento {
         return cantidadDescontada;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+    
     public void setCodigoDescuento(String codigoDescuento) {
         this.codigoDescuento = codigoDescuento;
     }
@@ -59,7 +68,7 @@ public class Descuento {
     
     public String data() {
     
-        return this.getFechaValidez()+"|"+this.getCantidadDescontada()+"|"+this.getCodigoDescuento();
+        return this.getId()+"|"+this.getFechaValidez()+"|"+this.getCantidadDescontada()+"|"+this.getCodigoDescuento();
     }
 
 }

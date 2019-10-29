@@ -15,12 +15,17 @@ public class Ccolaboracion extends Concierto {
     public Ccolaboracion() {
     }
     
-    public Ccolaboracion (long identificador, Date fechaHora) {
-        super(identificador, fechaHora);   
+    public Ccolaboracion (Date fechaHora) {
+        super(fechaHora);   
     }
     
     public Ccolaboracion (Ccolaboracion ccolaboracion) {
         super (ccolaboracion);
     }
-    
+
+    @Override
+    public String data() {
+        return super.data(); //To change body of generated methods, choose Tools | Templates.
+    }
+        
 }
