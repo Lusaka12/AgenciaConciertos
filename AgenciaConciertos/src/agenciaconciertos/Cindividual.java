@@ -14,12 +14,17 @@ public class Cindividual extends Concierto {
     public Cindividual() {
     }
 
-    public Cindividual(long identificador, Date fechaHora) {
-        super(identificador, fechaHora);
+    public Cindividual( Date fechaHora) {
+        super(fechaHora);
     }
 
     public Cindividual(Cindividual cindividual) {
         super(cindividual);
+    }
+
+    @Override
+    public String data() {
+        return super.data(); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

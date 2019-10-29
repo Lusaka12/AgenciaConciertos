@@ -10,7 +10,7 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Artista {
-    private long id;//atributo que sirve para identificar al artista |  valores validos numero entero mayor que 0
+    protected long id;//atributo que sirve para identificar al artista |  valores validos numero entero mayor que 0
     private String  nombreArtistico; //nombre artistico del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
     private char generoMusica; //genero de musica del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
 
@@ -38,13 +38,11 @@ public class Artista {
         this.generoMusica = generoMusica;
     }
 
-    public Artista(long id, String nombreArtistico, char generoMusica) {
-        this.id = id;
+    public Artista(String nombreArtistico, char generoMusica) {
         this.nombreArtistico = nombreArtistico;
         this.generoMusica = generoMusica;
     }
      public Artista(Artista a) {
-        this.id = a.getId();
         this.nombreArtistico = a.getNombreArtistico();
         this.generoMusica = a.getGeneroMusica();
     }
