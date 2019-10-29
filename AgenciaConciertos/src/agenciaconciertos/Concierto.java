@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package agenciaconciertos;
+import java.sql.Date;
 
 /**
  *
@@ -12,9 +13,9 @@ package agenciaconciertos;
  */
 public class Concierto {
     private long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
-    private String fecha; //atributo que sirve para idenfiticar la fecha del concierto// valores validos cadena de caracteres de 20 caracteres
-    private String hora; //atributo que sirve para idenfiticar la hora del concierto//valores validos cadena de caracteres de 20 caracteres
-
+    private Date fechaHora; //atributo que sirve para idenfiticar la fechaHora y la hora del concierto// valores validos cadena de caracteres de 20 caracteres
+                              
+    
     public long getId() {
         return id;
     }
@@ -23,32 +24,22 @@ public class Concierto {
         this.id = id;
     }
 
-    public String getFecha() {
-        return fecha;
+    public Date getFechaHora() {
+        return fechaHora;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFechaHora(Date fechaHora) {
+        this.fechaHora = fechaHora;
     }
 
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
-    public Concierto(long id, String fecha, String hora) {
+    public Concierto(long id, Date fechaHora) {
         this.id = id;
-        this.fecha = fecha;
-        this.hora = hora;
+        this.fechaHora = fechaHora;
         }
     
     public Concierto(Concierto c) {
         this.id = c.getId();
-        this.fecha = c.getFecha();
-        this.hora = c.getHora();
+        this.fechaHora = c.getFechaHora();   
     }
     
     public Concierto() {
@@ -56,12 +47,12 @@ public class Concierto {
 
     @Override
     public String toString() {
-        return "Concierto{" + "identificador=" + id + ", fecha=" + fecha + ", hora=" + hora + '}';
+        return "Concierto{" + "identificador=" + id + ", fecha=" + fechaHora +'}';
     }
    
     public String data() {
         
-        return this.getId()+"|"+this.getFecha()+"|"+this.getHora();
+        return this.getId()+"|"+this.getFechaHora();
     }
 }
 
