@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package agenciaconciertos;
-
+import java.sql.Date;
 /**
  *
  * @author DAW113
@@ -13,7 +13,7 @@ package agenciaconciertos;
 public class Reserva {
     private int numEntradas; //numero de entradas de la compra | valores validos hasta el maximo numero de entradas del concierto.
     private long id; //atributo que sirve para identificar a la compra |  valores validos numero entero mayor que 0
-    private String fechaMaxima; // Limite para reservar la entrada // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
+    public Date fechaMaxima; // Limite para reservar la entrada // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     private String codigoDescuento; //contiene un codigo de descuento que puede ser valido| valores validos "" si no se ha aportado ningun codigo y un codigo si se ha aportado
             
     public int getNumEntradas(){
@@ -24,7 +24,7 @@ public class Reserva {
         return id;
     }
     
-    public String getFechaMaxima(){
+    public Date getFechaMaxima(){
         return fechaMaxima;
     }
     
@@ -40,7 +40,7 @@ public class Reserva {
         this.id = id;
     }
     
-    public void setFechaMaxima(String fechaMaxima) {
+    public void setFechaMaxima(Date fechaMaxima) {
         this.fechaMaxima = fechaMaxima;
     }
     
@@ -48,7 +48,7 @@ public class Reserva {
         this.codigoDescuento = codigoDescuento;
     }
     
-    public Reserva(int numEntradas, long id, String fechaMaxima, String codigoDescuento) {
+    public Reserva(int numEntradas, long id, Date fechaMaxima, String codigoDescuento) {
         this.numEntradas = numEntradas;
         this.id = id;
         this.fechaMaxima = fechaMaxima;

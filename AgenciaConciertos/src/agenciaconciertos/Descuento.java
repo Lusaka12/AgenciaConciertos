@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package agenciaconciertos;
+import java.sql.Date;
 
 /**
  *
@@ -12,13 +13,13 @@ package agenciaconciertos;
  */
 public class Descuento {
     private String codigoDescuento; // identificar el código de descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
-    private String fechaValidez; // Cuando va a caducar el codigo descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
-    private double cantidadDescontada; // Cantidad que se descontará, se calculará restando el precio total menos el codigo descuento // valore validos un numero entero mayor que 0
+    public Date fechaValidez; // Cuando va a caducar el codigo descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
+    private double cantidadDescontada; // Cantidad que se descontará, se calculará restando el precio total menos el codigo descuento // valores validos un numero entero mayor que 0
     public String getCodigoDescuento() {
         return codigoDescuento;
     }
     
-    public String getFechaValidez() {
+    public Date getFechaValidez() {
        return fechaValidez;
     }
     
@@ -30,7 +31,7 @@ public class Descuento {
         this.codigoDescuento = codigoDescuento;
     }
 
-    public void setFechaValidez(String fechaValidez) {
+    public void setFechaValidez(Date fechaValidez) {
         this.fechaValidez = fechaValidez;
     }
 
@@ -38,7 +39,7 @@ public class Descuento {
         this.cantidadDescontada = cantidadDescontada;
     }       
 
-    public Descuento(String codigoDescuento, String fechaValidez, double cantidadDescontada) {
+    public Descuento(String codigoDescuento, Date fechaValidez, double cantidadDescontada) {
         this.codigoDescuento = codigoDescuento;
         this.fechaValidez = fechaValidez;
         this.cantidadDescontada = cantidadDescontada;

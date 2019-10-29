@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package agenciaconciertos;
-
+import java.sql.Date;
 /**
  *
  * @author david
@@ -12,8 +12,8 @@ package agenciaconciertos;
  */
 public class Gira {
     private long id;//atributo que sirve para identificar a la gira //  valores validos numero entero mayor que 0
-    private String fechaApertura;//atributo que sirve para identificar la fecha de apertura// valores validos cadena de caracteres de 20 caracteres
-    private String fechaCierre;//atributo que sirve para identificar la fecha de cierre // valores validos cadena de caracteres de 20 caracteres
+    public Date fechaApertura;//atributo que sirve para identificar la fecha de apertura// valores validos cadena de caracteres de 20 caracteres
+    public Date fechaCierre;//atributo que sirve para identificar la fecha de cierre // valores validos cadena de caracteres de 20 caracteres
     private String nombre;
 
     public String getNombre() {
@@ -23,6 +23,7 @@ public class Gira {
     public void setNombreNegociar(String nombreNegociar) {
         this.nombre = nombre;
     }
+    
     public long getId() {
         return id;
     }
@@ -31,23 +32,23 @@ public class Gira {
         this.id = id;
     }
 
-    public String getFechaApertura() {
+    public Date getFechaApertura() {
         return fechaApertura;
     }
 
-    public void setFechaApertura(String fechaApertura) {
+    public void setFechaApertura(Date fechaApertura) {
         this.fechaApertura = fechaApertura;
     }
 
-    public String getFechaCierre() {
+    public Date getFechaCierre() {
         return fechaCierre;
     }
 
-    public void setFechaCierre(String fechaCierre) {
+    public void setFechaCierre(Date fechaCierre) {
         this.fechaCierre = fechaCierre;
     }
 
-    public Gira(long id, String fechaApertura, String fechaCierre,String nombre) {
+    public Gira(long id, Date fechaApertura, Date fechaCierre,String nombre) {
         this.id = id;
         this.fechaApertura = fechaApertura;
         this.fechaCierre = fechaCierre;
