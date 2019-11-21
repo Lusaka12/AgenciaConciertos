@@ -25,10 +25,11 @@ public class CIndividual extends Concierto {
     }
 
     @Override
-    public String data() {
-        return super.data(); //To change body of generated methods, choose Tools | Templates.
+    public String data(){
+        return super.data(); 
     }
-    /*public CIndividual getCIndividualbyid (long id) {
+    /*
+    public CIndividual getCIndividualbyid (long id) {
         for (int i=0;i<listaobjetos;i++){
             CIndividual aux=listaobjetos.get(i);
             if (aux.getID()==id){
@@ -37,7 +38,9 @@ public class CIndividual extends Concierto {
         }
         return null;
     }
-    /*public ArrayList<CIndividual> getAllCindividual(){
+    */
+    /*
+    public ArrayList<CIndividual> getAllCindividual(){
         ArrayList<CIndividual> Lci = new ArrayList<CIndividual>();
         for (int i=0;i<listaobjetos.size();i++){
             CIndividual aux=listaobjetos.get(i);
@@ -46,20 +49,20 @@ public class CIndividual extends Concierto {
         return Lci;
     }*/
     public CIndividual nuevoCIndividual() {
-            CIndividual cIndividual=new CIndividual();
-            Scanner in=new Scanner(System.in);
-            char confirmacion; 
-            do{            
-            System.out.println(" ¿Qué día tenés el concierto?");
-            Date fecha= ToolBox.readDate(in, "DD-MM-YYYY-HH:MM:SS");
-            cIndividual.setFechaHora(fecha);
-            System.out.println("Pulse s para confirmar:");
-            confirmacion=in.nextLine().charAt(0);
-            } while (confirmacion!='s'||confirmacion!='S');
-            in.close();
-            return cIndividual;         
-        }
+        CIndividual cIndividual=new CIndividual();
+        Scanner in=new Scanner(System.in);
+        char confirmacion; 
+        do{            
+        System.out.println(" ¿Qué día tienes el concierto?");
+        Date fecha= ToolBox.readDate(in, "DD-MM-YYYY-HH:MM:SS");
+        cIndividual.setFechaHora(fecha);
+        System.out.println("Pulse s para confirmar:");
+        confirmacion=in.nextLine().charAt(0);
+        }while (confirmacion!='s'||confirmacion!='S');
+        in.close();
+        return cIndividual;         
     }
+}
     
 
 
