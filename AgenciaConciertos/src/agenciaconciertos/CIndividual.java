@@ -27,7 +27,7 @@ public class CIndividual extends Concierto {
     public String data() {
         return super.data(); //To change body of generated methods, choose Tools | Templates.
     }
-    public CIndividual getCIndividualbyid (long id) {
+    /*public CIndividual getCIndividualbyid (long id) {
         for (int i=0;i<listaobjetos;i++){
             CIndividual aux=listaobjetos.get(i);
             if (aux.getID()==id){
@@ -36,7 +36,7 @@ public class CIndividual extends Concierto {
         }
         return null;
     }
-    public ArrayList<CIndividual> getAllCindividual(){
+    /*public ArrayList<CIndividual> getAllCindividual(){
         ArrayList<CIndividual> Lci = new ArrayList<CIndividual>();
         for (int i=0;i<listaobjetos.size();i++){
             CIndividual aux=listaobjetos.get(i);
@@ -44,10 +44,12 @@ public class CIndividual extends Concierto {
         }
         return Lci;
     }
-    public CIndividual nuevoCIndividual() {
+    /*public CIndividual nuevoCIndividual() {
             System.out.println("Che wacho, ¿Qué día tenés el consierto?");
             Date fe= Toolbox.realDate(in, "DD-MM-YYYY-HH:MM:SS");
             f.set.Fecha(fe);
             return null;
     }
+    */
 }
+
