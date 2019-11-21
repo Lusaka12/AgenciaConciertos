@@ -15,5 +15,15 @@ import java.sql.Time;
 public class Momento {
     Date hora;
     String descripcion;
+    public Momento(Date hora, String descripcion) {
+        this.hora = hora;
+        this.descripcion = descripcion;
+    }
+    public Momento(Momento m) {
+        this.hora = hora;
+        this.descripcion = descripcion;
+    } 
+    public Momento(){
+    }
     
 }
