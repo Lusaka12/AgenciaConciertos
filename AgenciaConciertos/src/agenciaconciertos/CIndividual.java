@@ -6,6 +6,7 @@
 package agenciaconciertos;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  *
  * @author david
@@ -43,13 +44,22 @@ public class CIndividual extends Concierto {
             Lci.add(aux);
         }
         return Lci;
+    }*/
+    public CIndividual nuevoCIndividual() {
+            CIndividual cIndividual=new CIndividual();
+            Scanner in=new Scanner(System.in);
+            char confirmacion; 
+            do{            
+            System.out.println(" ¿Qué día tenés el concierto?");
+            Date fecha= ToolBox.readDate(in, "DD-MM-YYYY-HH:MM:SS");
+            cIndividual.setFechaHora(fecha);
+            System.out.println("Pulse s para confirmar:");
+            confirmacion=in.nextLine().charAt(0);
+            } while (confirmacion!='s'||confirmacion!='S');
+            in.close();
+            return cIndividual;         
+        }
     }
-    /*public CIndividual nuevoCIndividual() {
-            System.out.println("Che wacho, ¿Qué día tenés el consierto?");
-            Date fe= Toolbox.realDate(in, "DD-MM-YYYY-HH:MM:SS");
-            f.set.Fecha(fe);
-            return null;
-    }
-    */
-}
+    
+
 
