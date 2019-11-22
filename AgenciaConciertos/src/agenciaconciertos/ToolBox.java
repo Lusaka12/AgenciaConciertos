@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *
  */
 package agenciaconciertos;
 
@@ -11,7 +9,7 @@ import java.util.Scanner;
 
 
 /**
- *
+ * clase que contiene  metodos utiles para otras clases
  * @author DAW102
  */
 public class ToolBox {

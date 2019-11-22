@@ -16,8 +16,8 @@ public class CIndividual extends Concierto {
     public CIndividual() {
     }
 
-    public CIndividual( Date fechaHora) {
-        super(fechaHora);
+    public CIndividual( Date fechaHora,ArrayList<Artista> listArtistas) {
+        super(fechaHora,listArtistas);
     }
 
     public CIndividual(CIndividual cindividual) {
@@ -45,22 +45,24 @@ public class CIndividual extends Concierto {
         }
         return Lci;
     }*/
-    /*
+   
     public static CIndividual nuevoCIndividual() {
-            CIndividual cIndividual= Concierto().nuevoConcierto;
-            Scanner in=new Scanner(System.in);
-            char confirmacion; 
-            do{            
-            System.out.println(" ¿Qué día tenés el concierto?");
-            Date fecha= ToolBox.readDate(in, "DD-MM-YYYY-HH:MM:SS");
-            cIndividual.setFechaHora(fecha);
-            System.out.println("Pulse s para confirmar:");
-            confirmacion=in.nextLine().charAt(0);
-            } while (confirmacion!='s'||confirmacion!='S');
-            in.close();
-            return cIndividual;         
-        }
-    */
+        char confirmacion='n'; 
+        Scanner in=new Scanner(System.in);
+        CIndividual cIndividual;
+        do{
+        cIndividual= (CIndividual) Concierto.nuevoConcierto();
+        if (cIndividual.getListaArtistas().size()!=1) {
+            System.out.println("el numero de artistas es distinto"
+                    + " de 1 por favor vuelva a meter los datos del concierto");     
+        }else{
+        System.out.println("Pulse s para confirmar:");
+        confirmacion=in.nextLine().charAt(0);}
+        }while(confirmacion!='s'||confirmacion!='S'); 
+
+        return cIndividual;         
+    }
+  
     }
     
 

@@ -10,6 +10,8 @@ package agenciaconciertos;
  * @version 1.01
  */
 public class Artista {
+
+    
     protected long id;//atributo que sirve para identificar al artista |  valores validos numero entero mayor que 0
     private String  nombreArtistico; //nombre artistico del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
     private char generoMusica; //genero de musica del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
@@ -56,5 +58,8 @@ public class Artista {
     
     public String data() { 
         return this.getId()+"|"+this.getNombreArtistico()+"|"+this.getGeneroMusica();
+    }
+    public static Artista nuevoArtista() { 
+    return null;
     }
 }
