@@ -52,6 +52,9 @@ public class Concierto {
         
         return this.getId()+"|"+this.getFechaHora();
     }
+    public static Concierto nuevoConcierto() {
+        return null;
+    }
 }
 
 

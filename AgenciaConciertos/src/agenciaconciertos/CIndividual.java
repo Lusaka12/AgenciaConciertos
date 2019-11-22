@@ -45,8 +45,9 @@ public class CIndividual extends Concierto {
         }
         return Lci;
     }*/
-    public CIndividual nuevoCIndividual() {
-            CIndividual cIndividual=new CIndividual();
+    /*
+    public static CIndividual nuevoCIndividual() {
+            CIndividual cIndividual= Concierto().nuevoConcierto;
             Scanner in=new Scanner(System.in);
             char confirmacion; 
             do{            
@@ -59,6 +60,7 @@ public class CIndividual extends Concierto {
             in.close();
             return cIndividual;         
         }
+    */
     }
     
 
