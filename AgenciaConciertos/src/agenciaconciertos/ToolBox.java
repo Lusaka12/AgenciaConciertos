@@ -6,7 +6,7 @@ package agenciaconciertos;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
-
+import java.text.ParseException;
 
 /**
  * clase que contiene  metodos utiles para otras clases
@@ -14,9 +14,15 @@ import java.util.Scanner;
  */
 public class ToolBox {
     
-    public static Date readDate(Scanner sc, String format){
+    public static Date readDate(Scanner sc) throws ParseException{
         try {
-            return (Date) new SimpleDateFormat(format).parse(sc.nextLine());
+            String fechaTexto = sc.nextLine();
+            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            Date fecha = (Date) df.parse(fechaTexto);
+            
+        return fecha;
+           
+                   
         } catch (Exception e) {
             return null;
         }

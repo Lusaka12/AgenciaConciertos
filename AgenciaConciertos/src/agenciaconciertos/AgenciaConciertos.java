@@ -17,6 +17,8 @@ public class AgenciaConciertos {
     public static void main(String[] args) {
         // TODO code application logic here
         //LBB
+        Concierto c=Concierto.nuevoConcierto();
+        
     }
     
 }

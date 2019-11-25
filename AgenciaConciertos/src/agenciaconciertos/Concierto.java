@@ -71,8 +71,11 @@ public class Concierto {
         int numArtistas;
         do{            
         System.out.println(" ¿Qué día tienes el concierto?");
-        Date fecha= ToolBox.readDate(in, "DD-MM-YYYY-HH:MM:SS");
-        concierto.setFechaHora(fecha);
+        //Date fecha= ToolBox.readDate(in);
+            //System.out.println(fecha);
+        //boolean aux=in.nextBoolean();
+           // System.out.println(aux);
+        //concierto.setFechaHora(fecha);
         System.out.println("¿cuantos artistas participan en el concierto?");
         numArtistas=in.nextInt();
         switch(numArtistas){
@@ -82,8 +85,7 @@ public class Concierto {
                 concierto.listaArtistas.add(Artista.nuevoArtista());
                 break;           
             default:
-                System.out.println("El numero de artistas no es 1 o 2");
-                
+                System.out.println("El numero de artistas no es 1 o 2");   
         }
         System.out.println("Pulse s para confirmar:");
         confirmacion=in.nextLine().charAt(0);
