@@ -3,7 +3,7 @@
  */
 package agenciaconciertos;
 
-import java.sql.Date;
+import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.text.ParseException;
@@ -14,10 +14,11 @@ import java.text.ParseException;
  */
 public class ToolBox {
     
-    public static Date readDate(Scanner sc) throws ParseException{
+    public static Date readDate(){
         try {
+            Scanner sc=new Scanner(System.in);
             String fechaTexto = sc.nextLine();
-            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm");
             Date fecha = (Date) df.parse(fechaTexto);
             
         return fecha;
@@ -26,5 +27,17 @@ public class ToolBox {
         } catch (Exception e) {
             return null;
         }
+    }
+    public static boolean readBoolean(){
+        Scanner sc=new Scanner(System.in);
+        char confirmacion;
+        do{
+            confirmacion = sc.next().toLowerCase().charAt(0);
+            if(confirmacion == 's'||confirmacion=='n'){
+                return confirmacion=='s';
+            }else{
+               continue;
+            }
+        }while(true);
     }
 }

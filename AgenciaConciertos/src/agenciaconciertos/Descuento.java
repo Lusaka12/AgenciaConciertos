@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package agenciaconciertos;
-import java.sql.Date;
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -16,6 +18,7 @@ public class Descuento {
     private String codigoDescuento; // identificar el código de descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     public Date fechaValidez; // Cuando va a caducar el codigo descuento // valores validos cadena de caracteres de 20 caracteres no pudiendo tener simbolos y numeros
     private double cantidadDescontada; // Cantidad que se descontará, se calculará restando el precio total menos el codigo descuento // valores validos un numero entero mayor que 0
+    
     public String getCodigoDescuento() {
         return codigoDescuento;
     }
@@ -70,7 +73,40 @@ public class Descuento {
     
         return this.getId()+"|"+this.getFechaValidez()+"|"+this.getCantidadDescontada()+"|"+this.getCodigoDescuento();
     }
-
+    public Descuento getDescuentoById (long id){
+        /*
+        for(Descuento descuento:listaDescuentos) {
+            if (descuento.getId()==id) {
+                return descuento;
+            }
+        }    
+        */
+        return null;
+    }
+    public ArrayList<Descuento> getAllDescuento (){
+        ArrayList<Descuento> nuevaListaDescuentos=new ArrayList<Descuento>();
+        /*for(Descuento descuento:listaDescuentos) {
+            nuevaListaDescuentos.add(descuento);
+        } 
+        */  
+        return nuevaListaDescuentos;
+    }
+    public static Descuento nuevoDescuento (){
+        Descuento descuento= new Descuento();
+        boolean confirmacion;
+        Scanner sc= new Scanner(System.in);
+        do{            
+            System.out.println("¿cuál es el codigo de descuento?");
+            descuento.setCodigoDescuento(sc.next());
+            System.out.println("¿Hasta cuando es la fecha de validez? formato:dd/MM/yyyy hh:mm");
+            descuento.setFechaValidez(ToolBox.readDate());
+            System.out.println("¿Cuál es la cantidad descontada?");
+            descuento.setCantidadDescontada(sc.nextDouble());
+            System.out.println("Pulse s para confirmar:");
+            confirmacion=ToolBox.readBoolean();
+        } while (!confirmacion);
+        return descuento;
+    } 
 }
         
   

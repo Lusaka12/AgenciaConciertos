@@ -16,8 +16,8 @@ public class CIndividual extends Concierto {
     public CIndividual() {
     }
 
-    public CIndividual( Date fechaHora,ArrayList<Artista> listArtistas) {
-        super(fechaHora,listArtistas);
+    public CIndividual( Date fechaHora,ArrayList<Actuacion> listaActuaciones) {
+        super(fechaHora,listaActuaciones);
     }
 
     public CIndividual(CIndividual cindividual) {
@@ -52,7 +52,7 @@ public class CIndividual extends Concierto {
         CIndividual cIndividual;
         do{
         cIndividual= (CIndividual) Concierto.nuevoConcierto();
-        if (cIndividual.getListaArtistas().size()!=1) {
+        if (cIndividual.getListaActuaciones().size()!=1) {
             System.out.println("el numero de artistas es distinto"
                     + " de 1 por favor vuelva a meter los datos del concierto");     
         }else{

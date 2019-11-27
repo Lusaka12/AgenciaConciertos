@@ -5,6 +5,8 @@
  */
 package agenciaconciertos;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author DAW113
@@ -14,7 +16,7 @@ public class Actuacion {
     protected long id; //atributo que sirve para identificar a la actuacion // valores validos numero entero mayor que 0
     private int numeroSecuencia; // numero de actuacion que forma parte del concierto // valores validos hasta el numero maximo de actuaciones en el concierto
     private int duracion; //numero de minutos que dura la actuacion // valores validos hasta el numero maximo de minutos que dura la actuacion
-
+    private ArrayList<Artista> listaArtistas;
     public long getId() {
         return id;
     }

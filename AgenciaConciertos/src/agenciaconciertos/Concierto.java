@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Concierto {
     protected long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
     private Date fechaHora; //atributo que sirve para idenfiticar la fechaHora y la hora del concierto// valores validos cadena de caracteres de 20 caracteres
-    private ArrayList<Artista> listaArtistas;                          
+    private ArrayList<Actuacion> listaActuaciones;//lista que contiene las actuaciones de un concierto //minimo 5 y maximo 10.                          
     
     public long getId() {
         return id;
@@ -34,26 +34,26 @@ public class Concierto {
         this.fechaHora = fechaHora;
     }
 
-    public ArrayList<Artista> getListaArtistas() {
-        return listaArtistas;
+    public ArrayList<Actuacion> getListaActuaciones() {
+        return listaActuaciones;
     }
 
-    public void setListaArtistas(ArrayList<Artista> listaArtistas) {
-        this.listaArtistas = listaArtistas;
+    public void setListaArtistas(ArrayList<Actuacion> listaActuaciones) {
+        this.listaActuaciones = listaActuaciones;
     }
     
-    public Concierto(Date fechaHora,ArrayList<Artista> listArtistas) {
+    public Concierto(Date fechaHora,ArrayList<Actuacion> listaActuaciones) {
         this.fechaHora = fechaHora;
-        listaArtistas=listArtistas;
+        this.listaActuaciones=listaActuaciones;
         }
     
     public Concierto(Concierto c) {
         this.fechaHora = c.getFechaHora();
-        listaArtistas=c.getListaArtistas();
+        listaActuaciones=c.getListaActuaciones();
     }
     
     public Concierto() {
-        listaArtistas=new ArrayList<Artista>();
+        listaActuaciones=new ArrayList<Actuacion>();
     }
     @Override
     public String toString() {
@@ -67,8 +67,9 @@ public class Concierto {
     public static Concierto nuevoConcierto() {
         Concierto concierto=new Concierto();
         Scanner in=new Scanner(System.in);
-        char confirmacion; 
+        boolean confirmacion; 
         int numArtistas;
+        
         do{            
         System.out.println(" ¿Qué día tienes el concierto?");
         //Date fecha= ToolBox.readDate(in);
@@ -80,16 +81,15 @@ public class Concierto {
         numArtistas=in.nextInt();
         switch(numArtistas){
             case 2:
-                concierto.listaArtistas.add(Artista.nuevoArtista());
+               // concierto.listaActuaciones.add(Actuaciones.nuevaActuacion());
             case 1:
-                concierto.listaArtistas.add(Artista.nuevoArtista());
+               // concierto.listaActuaciones.add(Actuaciones.nuevaActuacion());
                 break;           
             default:
                 System.out.println("El numero de artistas no es 1 o 2");   
         }
-        System.out.println("Pulse s para confirmar:");
-        confirmacion=in.nextLine().charAt(0);
-        } while (confirmacion!='s'||confirmacion!='S');
+        confirmacion=ToolBox.readBoolean();
+        } while (confirmacion!=true);
         in.close();
         return concierto;         
        

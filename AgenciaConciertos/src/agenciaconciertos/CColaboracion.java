@@ -17,8 +17,8 @@ public class CColaboracion extends Concierto {
     public CColaboracion() {
     }
     
-    public CColaboracion (Date fechaHora,ArrayList<Artista> listArtistas) {
-        super(fechaHora,listArtistas);   
+    public CColaboracion (Date fechaHora,ArrayList<Actuacion> listaActuaciones) {
+        super(fechaHora,listaActuaciones);   
     }
     
     public CColaboracion (CColaboracion ccolaboracion) {
@@ -35,7 +35,7 @@ public class CColaboracion extends Concierto {
         CColaboracion cColaboracion;
         do{
         cColaboracion= (CColaboracion) Concierto.nuevoConcierto();
-        if (cColaboracion.getListaArtistas().size()!=2) {
+        if (cColaboracion.getListaActuaciones().size()!=2) {
             System.out.println("el numero de artistas es distinto"
                     + " de 2 por favor vuelva a meter los datos del concierto");     
         }else{
