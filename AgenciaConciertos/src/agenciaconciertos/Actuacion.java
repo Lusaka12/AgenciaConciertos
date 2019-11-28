@@ -92,7 +92,7 @@ public class Actuacion {
         }*/
         return null;
     }
-    public ArrayList<Actuacion> getAllDescuento (){
+    public ArrayList<Actuacion> getAllActuacion (){
         ArrayList<Actuacion> nuevaListaActuacion=new ArrayList<Actuacion>();
         /*for(Actuacion actuacion:listaActuaciones) {
             nuevaListaDescuentos.add(descuento);

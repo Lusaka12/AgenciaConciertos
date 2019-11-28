@@ -5,6 +5,9 @@
  */
 package agenciaconciertos;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author DAW102
@@ -18,7 +21,8 @@ public class Usuario {
             NIF; // el NIF del usuario | valores validos cadena de caracters de 8 caracteres siendo los 7 de primeros  ellos numeros 
                  // y el ultimo una letra no pudiendo tener simbolos 
     private boolean verificado;//atributo que indica si el usuario ha sido verificado | valores validos true cuando si esta verificado o false cuando no lo esta
-
+    private Reserva reserva;
+    
     public void setId(long id) {
         this.id = id;
     }
@@ -67,23 +71,39 @@ public class Usuario {
         return verificado;
     }
 
-    public Usuario(String nombre, String apellidos, String email, String NIF, boolean verificado) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.email = email;
-        this.NIF = NIF;
-        this.verificado = verificado;
+    public Reserva getReserva() {
+        return reserva;
     }
+
+    public void setReserva(Reserva reserva) {
+        this.reserva = reserva;
+    }
+
+    public boolean isVerificado() {
+        return verificado;
+    }
+ 
     public Usuario(Usuario u) {
         this.nombre = u.getNombre();
         this.apellidos = u.getApellidos();
         this.email = u.getEmail();
         this.NIF = u.getNIF();
-        this.verificado = u.getVerificado();
+        this.verificado = false;
     }
     public Usuario() {
+        this.verificado = false;
     }
 
+    public Usuario(String nombre, String apellidos, String email, String NIF, boolean verificado, Reserva reserva) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.NIF = NIF;
+        this.verificado = verificado;
+        this.reserva = reserva;
+    }
+    
+    
     @Override
     public String toString() {
         return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + ", NIF=" + NIF + ", verificado=" + verificado + '}';
@@ -93,5 +113,41 @@ public class Usuario {
         
         return this.getId()+"|"+this.getNombre()+"|" + this.getApellidos() + "|"+this.getEmail()
              + "|" + this.getNIF() +"|"+this.getVerificado();
+    }
+    public Usuario getUsuarioById (long id){
+        /*for (Usuario usuario : listaUsuarios) {
+            if (usuario.getId() == id) {
+                return usuario;
+            }
+        }*/
+        return null;
+    }
+    public ArrayList<Usuario> getAllUsuario (){
+        ArrayList<Usuario> nuevaListaUsuario=new ArrayList<Usuario>();
+            /*for(Usuario usuario:listaUsuario) {
+            nuevaListaUsuario.add(usuario);
+        } 
+        */  
+        return nuevaListaUsuario;
+    }
+    public Usuario nuevoUsuario(){
+        Usuario usuario=new Usuario();
+        Scanner in=new Scanner(System.in);
+        boolean confirmacion; 
+        do{    
+        System.out.println("¿Cual es tu nombre?"); 
+        usuario.setNombre(in.next());
+        System.out.println("¿Cuales son tus apellidos?");
+        usuario.setApellidos(in.next());
+        System.out.println("¿Que NIF tiene el reportero?");
+        usuario.setNIF(in.next());
+        System.out.println("¿Cual es tu Email?");
+        usuario.setEmail(in.next());
+        //Artista a=Artista.buscaPorNombreArtistico;
+        //actuacion.setListaArtistas(a);
+        confirmacion=ToolBox.readBoolean();
+        }while (confirmacion!=true);
+        in.close();
+        return usuario;
     }
 }

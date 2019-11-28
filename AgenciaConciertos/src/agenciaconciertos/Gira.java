@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public class Gira {
     protected long id;//atributo que sirve para identificar a la gira //  valores validos numero entero mayor que 0
-    public Date fechaApertura;//atributo que sirve para identificar la fecha de apertura// valores validos cadena de caracteres de 20 caracteres
-    public Date fechaCierre;//atributo que sirve para identificar la fecha de cierre // valores validos cadena de caracteres de 20 caracteres
+    private Date fechaApertura;//atributo que sirve para identificar la fecha de apertura// valores validos cadena de caracteres de 20 caracteres
+    private Date fechaCierre;//atributo que sirve para identificar la fecha de cierre // valores validos cadena de caracteres de 20 caracteres
     private String nombre;
 
     public String getNombre() {
