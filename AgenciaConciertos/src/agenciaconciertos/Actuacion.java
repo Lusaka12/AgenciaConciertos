@@ -78,7 +78,7 @@ public class Actuacion {
     
     @Override
     public String toString() {
-        return "Actuacion{" + "identificador=" + id + ", numeroSecuencia=" + numeroSecuencia + ", duracion" + duracion + '}';
+        return "Actuacion{" + "identificador=" + id + ", numeroSecuencia=" + numeroSecuencia + ", duracion=" + duracion + '}';
     }
     
     public String data() {
@@ -105,9 +105,9 @@ public class Actuacion {
         Scanner in=new Scanner(System.in);
         boolean confirmacion; 
         do{    
-        System.out.println("¿En que posicion es la actuacion?"); 
+        System.out.println("¿En qué posicion es la actuacion?"); 
         actuacion.setNumeroSecuencia(in.nextInt());
-        System.out.println("¿Cuanto dura la actuacion?");
+        System.out.println("¿Cuánto dura la actuacion?");
         actuacion.setDuracion(in.nextInt());
         System.out.println("Dame nombre Artistico");
         //Artista a=Artista.buscaPorNombreArtistico();
