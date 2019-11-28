@@ -92,7 +92,7 @@ public class Actuacion {
         }*/
         return null;
     }
-    public ArrayList<Actuacion> getAllDescuento (){
+    public ArrayList<Actuacion> getAllActuacion (){
         ArrayList<Actuacion> nuevaListaActuacion=new ArrayList<Actuacion>();
         /*for(Actuacion actuacion:listaActuaciones) {
             nuevaListaDescuentos.add(descuento);
@@ -100,7 +100,7 @@ public class Actuacion {
         */  
         return nuevaListaActuacion;
     }
-    public Actuacion nuevaActuacion(){
+    public static Actuacion nuevaActuacion(){
         Actuacion actuacion=new Actuacion();
         Scanner in=new Scanner(System.in);
         boolean confirmacion; 
@@ -110,7 +110,7 @@ public class Actuacion {
         System.out.println("¿Cuanto dura la actuacion?");
         actuacion.setDuracion(in.nextInt());
         System.out.println("Dame nombre Artistico");
-        //Artista a=Artista.buscaPorNombreArtistico;
+        //Artista a=Artista.buscaPorNombreArtistico();
         //actuacion.setListaArtistas(a);
         confirmacion=ToolBox.readBoolean();
         }while (confirmacion!=true);

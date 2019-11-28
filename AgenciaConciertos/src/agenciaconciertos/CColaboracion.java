@@ -27,9 +27,9 @@ public class CColaboracion extends Concierto {
 
     @Override
     public String data() {
-        return super.data(); //To change body of generated methods, choose Tools | Templates.
+        return super.data();
     }
-    public static CColaboracion nuevoCIndividual() {
+    public static CColaboracion nuevaColaboracion() {
         char confirmacion='n'; 
         Scanner in=new Scanner(System.in);
         CColaboracion cColaboracion;
@@ -42,7 +42,6 @@ public class CColaboracion extends Concierto {
         System.out.println("Pulse s para confirmar:");
         confirmacion=in.nextLine().charAt(0);}
         }while(confirmacion!='s'||confirmacion!='S'); 
-
         return cColaboracion;         
     }
 }

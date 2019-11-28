@@ -80,8 +80,8 @@ public class Momento {
             momento.setHora(ToolBox.readDate());
             System.out.println("Descibe el momento");
             momento.setDescripcion(sc.next());
-            System.out.println("Dime el reportero que hizo el momento");
-            //reportero.setReportero
+            System.out.println("Dime el DNI del reportero que hizo el momento");
+            //momento.setReportero((sc.next()))
             confirmacion=ToolBox.readBoolean();
         } while (!confirmacion);
         return momento;
