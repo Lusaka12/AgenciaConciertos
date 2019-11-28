@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package agenciaconciertos;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
 

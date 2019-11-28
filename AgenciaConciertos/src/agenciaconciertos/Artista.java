@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package agenciaconciertos;   
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+
 /**
  *
  * @author DAW102
@@ -14,8 +19,8 @@ public class Artista {
     
     protected long id;//atributo que sirve para identificar al artista |  valores validos numero entero mayor que 0
     private String  nombreArtistico; //nombre artistico del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
-    private char generoMusica; //genero de musica del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
-
+    private String generoMusica; //genero de musica del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
+    private ArrayList<Actuacion> ListaActuaciones;
     public long getId() {
         return id;
     }
@@ -24,8 +29,16 @@ public class Artista {
         return nombreArtistico;
     }
 
-    public char getGeneroMusica() {
+    public String getGeneroMusica() {
         return generoMusica;
+    }
+
+    public ArrayList<Actuacion> getListaActuaciones() {
+        return ListaActuaciones;
+    }
+
+    public void setListaActuaciones(ArrayList<Actuacion> ListaActuaciones) {
+        this.ListaActuaciones = ListaActuaciones;
     }
 
     public void setId(long id) {
@@ -36,19 +49,22 @@ public class Artista {
         this.nombreArtistico = nombreArtistico;
     }
 
-    public void setGeneroMusica(char generoMusica) {
+    public void setGeneroMusica(String generoMusica) {
         this.generoMusica = generoMusica;
     }
 
-    public Artista(String nombreArtistico, char generoMusica) {
+    public Artista(String nombreArtistico, String generoMusica,ArrayList<Actuacion> listaActuaciones) {
         this.nombreArtistico = nombreArtistico;
         this.generoMusica = generoMusica;
+        this.ListaActuaciones=listaActuaciones;
     }
      public Artista(Artista a) {
         this.nombreArtistico = a.getNombreArtistico();
         this.generoMusica = a.getGeneroMusica();
+        this.ListaActuaciones=a.ListaActuaciones;
     }
     public Artista(){
+        ListaActuaciones=new ArrayList<Actuacion>();
     }
 
     @Override
@@ -59,7 +75,38 @@ public class Artista {
     public String data() { 
         return this.getId()+"|"+this.getNombreArtistico()+"|"+this.getGeneroMusica();
     }
+    public Artista getArtistaById (long id){
+      /*
+        for(Artista artista:listaArtista){
+            if(artista.getId()==id){
+                return artista;
+            }
+        }
+        */
+        return null;
+    }
+    public  ArrayList<Artista> getAllArtista (){
+        ArrayList<Artista> nuevaLista=new ArrayList<Artista>();
+        /*for(Artista artista:listaArtista){
+            if(artista.getId()==id){
+                nuevaLista.add(artista);
+            }
+        }*/
+        return nuevaLista;
+    }
     public static Artista nuevoArtista() { 
-    return null;
+        Artista artista=new Artista();
+        Scanner in=new Scanner(System.in);
+        boolean confirmacion; 
+        do{    
+        System.out.println("¿Cuál es el nombre artistico del artista?"); 
+        artista.setNombreArtistico(in.next());
+        System.out.println(" ¿Cuál es el genero musical del artista?");
+        artista.setGeneroMusica(in.next());
+        confirmacion=ToolBox.readBoolean();
+        }while (confirmacion!=true);
+        in.close();
+        return artista; 
+       
     }
 }

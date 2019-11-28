@@ -5,15 +5,16 @@
  */
 package agenciaconciertos;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
  * @author DAW102
  */
 public class Momento {
-    private Date hora;
+    protected  long id;//atributo que sirve para identificar a la momento //  valores validos numero entero mayor que 0
+    private Date hora;//
     private String descripcion;
     private Reportero reportero;
     
@@ -69,4 +70,21 @@ public class Momento {
         }
         return LMM;
     }*/
+    public Momento nuevoMomento(){
+         
+        Momento momento= new Momento();
+        boolean confirmacion;
+        Scanner sc= new Scanner(System.in);
+        do{            
+            System.out.println("¿a qué hora ocurrió el momento? formato:dd/MM/yyyy hh:mm");
+            momento.setHora(ToolBox.readDate());
+            System.out.println("Descibe el momento");
+            momento.setDescripcion(sc.next());
+            System.out.println("Dime el reportero que hizo el momento");
+            //reportero.setReportero
+            confirmacion=ToolBox.readBoolean();
+        } while (!confirmacion);
+        return momento;
+     
+    }
 }
