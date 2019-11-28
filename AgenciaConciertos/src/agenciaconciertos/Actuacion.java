@@ -100,7 +100,7 @@ public class Actuacion {
         */  
         return nuevaListaActuacion;
     }
-    public Actuacion nuevaActuacion(){
+    public static Actuacion nuevaActuacion(){
         Actuacion actuacion=new Actuacion();
         Scanner in=new Scanner(System.in);
         boolean confirmacion; 
@@ -109,8 +109,8 @@ public class Actuacion {
         actuacion.setNumeroSecuencia(in.nextInt());
         System.out.println("¿Cuánto dura la actuacion?");
         actuacion.setDuracion(in.nextInt());
-        System.out.println("Dame nombre Artístico");
-        //Artista a=Artista.buscaPorNombreArtistico;
+        System.out.println("Dame nombre Artistico");
+        //Artista a=Artista.buscaPorNombreArtistico();
         //actuacion.setListaArtistas(a);
         confirmacion=ToolBox.readBoolean();
         }while (confirmacion!=true);

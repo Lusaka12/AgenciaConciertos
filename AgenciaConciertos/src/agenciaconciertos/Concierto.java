@@ -16,8 +16,8 @@ import java.util.Scanner;
 public class Concierto {
     protected long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
     private Date fechaHora; //atributo que sirve para idenfiticar la fechaHora y la hora del concierto// valores validos cadena de caracteres de 20 caracteres
-    private ArrayList<Actuacion> listaActuaciones;//lista que contiene las actuaciones de un concierto //minimo 5 y maximo 10.                          
-    
+    protected ArrayList<Actuacion> listaActuaciones;//lista que contiene las actuaciones de un concierto //minimo 5 y maximo 10.                          
+  
     public long getId() {
         return id;
     }
@@ -42,17 +42,17 @@ public class Concierto {
         this.listaActuaciones = listaActuaciones;
     }
     
-    public Concierto(Date fechaHora,ArrayList<Actuacion> listaActuaciones) {
+    protected Concierto(Date fechaHora,ArrayList<Actuacion> listaActuaciones) {
         this.fechaHora = fechaHora;
         this.listaActuaciones=listaActuaciones;
         }
     
-    public Concierto(Concierto c) {
+    protected Concierto(Concierto c) {
         this.fechaHora = c.getFechaHora();
         listaActuaciones=c.getListaActuaciones();
     }
     
-    public Concierto() {
+    protected Concierto() {
         listaActuaciones=new ArrayList<Actuacion>();
     }
     @Override
@@ -64,30 +64,32 @@ public class Concierto {
         
         return this.getId()+"|"+this.getFechaHora();
     }
+    public Concierto getConciertoById (long id){
+        /*
+        for(Concierto concierto:listaConciertos) {
+            if (concierto.getId()==id) {
+                return concierto;
+            }
+        }    
+        */
+        return null;
+    }
+    public ArrayList<Concierto> getAllConciertos (){
+        ArrayList<Concierto> nuevaListaConciertos=new ArrayList<Concierto>();
+        /*for(Concierto concierto:listaConcierto) {
+            nuevaListaconciertos.add(concierto);
+        } 
+        */  
+        return nuevaListaConciertos;
+    }
     public static Concierto nuevoConcierto() {
         Concierto concierto=new Concierto();
         Scanner in=new Scanner(System.in);
-        boolean confirmacion; 
-        int numArtistas;
-        
+        boolean confirmacion;
         do{            
         System.out.println(" ¿Qué día tienes el concierto?");
-        //Date fecha= ToolBox.readDate(in);
-            //System.out.println(fecha);
-        //boolean aux=in.nextBoolean();
-           // System.out.println(aux);
-        //concierto.setFechaHora(fecha);
-        System.out.println("¿cuantos artistas participan en el concierto?");
-        numArtistas=in.nextInt();
-        switch(numArtistas){
-            case 2:
-               // concierto.listaActuaciones.add(Actuaciones.nuevaActuacion());
-            case 1:
-               // concierto.listaActuaciones.add(Actuaciones.nuevaActuacion());
-                break;           
-            default:
-                System.out.println("El numero de artistas no es 1 o 2");   
-        }
+        Date fecha= ToolBox.readDate();
+        concierto.setFechaHora(fecha); 
         confirmacion=ToolBox.readBoolean();
         } while (confirmacion!=true);
         in.close();

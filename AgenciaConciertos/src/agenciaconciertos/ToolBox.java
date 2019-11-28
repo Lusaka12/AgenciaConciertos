@@ -35,8 +35,6 @@ public class ToolBox {
             confirmacion = sc.next().toLowerCase().charAt(0);
             if(confirmacion == 's'||confirmacion=='n'){
                 return confirmacion=='s';
-            }else{
-               continue;
             }
         }while(true);
     }
