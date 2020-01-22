@@ -131,7 +131,7 @@ public class Usuario {
         return nuevaListaUsuario;
     }
     public Usuario nuevoUsuario(){
-        Usuario usuario=new Usuario();
+        Usuario usuario=new Usuario();  
         Scanner in=new Scanner(System.in);
         boolean confirmacion; 
         do{    
@@ -139,7 +139,7 @@ public class Usuario {
         usuario.setNombre(in.next());
         System.out.println("¿Cuales son tus apellidos?");
         usuario.setApellidos(in.next());
-        System.out.println("¿Que NIF tiene el reportero?");
+        System.out.println("¿Cual esd tu DNI?");
         usuario.setNIF(in.next());
         System.out.println("¿Cual es tu Email?");
         usuario.setEmail(in.next());

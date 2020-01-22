@@ -15,9 +15,9 @@ import java.util.Scanner;
  */
 public class Concierto {
     protected long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
-    private Date fechaHora; //atributo que sirve para idenfiticar la fechaHora y la hora del concierto// valores validos cadena de caracteres de 20 caracteres
+    private Date fechaHora; //atributo que sirve para idenfiticar la fecha y la hora del concierto// valores validos cadena de caracteres de 20 caracteres
     protected ArrayList<Actuacion> listaActuaciones;//lista que contiene las actuaciones de un concierto //minimo 5 y maximo 10.                          
-  
+    protected String nombreConcierto; //el enombre del concierto. 
     public long getId() {
         return id;
     }
@@ -55,11 +55,29 @@ public class Concierto {
     protected Concierto() {
         listaActuaciones=new ArrayList<Actuacion>();
     }
+
+    public String getNombreConcierto() {
+        return nombreConcierto;
+    }
+
+    public void setNombreConcierto(String nombreConcierto) {
+        this.nombreConcierto = nombreConcierto;
+    }
+
+    public Concierto(ArrayList<Actuacion> listaActuaciones, String nombreConcierto) {
+        this.listaActuaciones = listaActuaciones;
+        this.nombreConcierto = nombreConcierto;
+    }
     @Override
     public String toString() {
         return "Concierto{" + "identificador=" + id + ", fecha=" + fechaHora +'}';
     }
-   
+    public void anadeActuacion(Actuacion actuacion){
+        if(listaActuaciones.size()<10)
+        listaActuaciones.add(actuacion);
+        else{
+                }
+    }
     public String data() {
         
         return this.getId()+"|"+this.getFechaHora();
