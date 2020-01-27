@@ -127,23 +127,29 @@ public class Reportero {
         return nuevaListaReportero;
     }
     
-    public static Reportero nuevoReportero(){
-        Reportero reportero=new Reportero();
+    public static Reportero nuevoReportero() throws ReporteroException{
+        Reportero reportero;
         Scanner in=new Scanner(System.in);
         boolean confirmacion; 
+        String nombre,apellidos,NIF,numTelefono;
         do{    
-        System.out.println("¿Cual es el nombre del reportero?"); 
-        reportero.setNombre(in.next());
+        System.out.println("¿Cual es el nombre del reportero?");
+        nombre=in.next();
+        ReporteroException.validaNombre(nombre);       
         System.out.println("¿Cuales son los apellidos del reportero?");
-        reportero.setApellidos(in.next());
+        apellidos=in.next();
+        ReporteroException.validaApellidos(apellidos);     
         System.out.println("¿Que NIF tiene el reportero?");
-        reportero.setNIF(in.next());
+        NIF=in.next();
+        ReporteroException.validaNIF(NIF);   
         System.out.println("¿Cual es el numero de telefono del reportero?");
-        reportero.setNumero(in.next());
+        numTelefono=in.next();
+        ReporteroException.validanNumero(numTelefono);
         //Artista a=Artista.buscaPorNombreArtistico;
         //actuacion.setListaArtistas(a);
         confirmacion=ToolBox.readBoolean();
         }while (confirmacion!=true);
+        reportero = new Reportero(nombre, apellidos, NIF, numTelefono);
         in.close();
         return reportero;
     }

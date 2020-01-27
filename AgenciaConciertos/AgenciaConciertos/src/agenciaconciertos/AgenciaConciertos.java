@@ -20,7 +20,7 @@ public class AgenciaConciertos {
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
         // caso de uso AsignaReporteroAActuacion
-        System.out.println("Selecione un opcion");
+        System.out.println("Seleccione un opcion");
         System.out.println("1. Asigna reportero a actuacion");
         System.out.println("2. Caso de uso 1");
         System.out.println("3. Caso de uso 2");
@@ -34,7 +34,7 @@ public class AgenciaConciertos {
                String nombreGira=in.next();
                Gira gira=BaseDatos.buscaGiraByNombre(nombreGira);
                int i=0;
-               System.out.println("Selecione uno de los siguientes conciertos de la gira");
+               System.out.println("Seleccione uno de los siguientes conciertos de la gira");
                for(Concierto concierto:gira.getListaConciertos()){
                    System.out.println(i+" "+concierto.getFechaHora().toString());
                    i++;
@@ -42,7 +42,7 @@ public class AgenciaConciertos {
                int numConcierto=in.nextInt();
                Concierto conciertoEscogido=gira.getConciertoByPos(numConcierto);
                ArrayList<Actuacion> actuaciones=conciertoEscogido.getListaActuaciones();
-               System.out.println("Selecione la actuacion:");
+               System.out.println("Seleccione la actuacion:");
                for(i=0;i<actuaciones.size();i++){
                    Actuacion actuacion=actuaciones.get(i);
                    if(actuacion.getReportero()==null){
