@@ -136,11 +136,17 @@ public class Actuacion {
         }
         Scanner in=new Scanner(System.in);
         System.out.println("introduzca el nif del reportero: NNNNL N numero L letra");
-        String nif=in.nextLine().trim();
+        String nif=in.nextLine().trim().toLowerCase();
         char letra=nif.charAt(nif.length()-1);
         //he puesto tamano 5 por poner uno.
         if(nif.length()!=5 && "0123456789".indexOf(letra)!=-1){
             //throw new formatoNifIncorrecto();
+        }//compruebo el resto de caracteres
+        for(int i=0;i<nif.length()-1;i++){
+            letra=nif.charAt(i);
+            if( "0123456789".indexOf(letra)==-1){
+                //throw new formatoNifIncorrecto();
+            }
         }
         Reportero rep=BaseDatos.buscaReporteroByNIF(nif);
         if(rep==null){
