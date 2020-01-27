@@ -16,8 +16,8 @@ import java.util.Scanner;
 public class Concierto {
     protected long id; //atributo que sirve para identificar al concierto //  valores validos numero entero mayor que 0
     private Date fechaHora; //atributo que sirve para idenfiticar la fechaHora y la hora del concierto// valores validos cadena de caracteres de 20 caracteres
-    protected ArrayList<Actuacion> listaActuaciones;//lista que contiene las actuaciones de un concierto //minimo 5 y maximo 10.                          
-  
+    protected ArrayList<Actuacion> listaActuaciones;//lista que contiene las actuaciones de un concierto //minimo 5 y maximo 10.
+    
     public long getId() {
         return id;
     }
@@ -128,7 +128,9 @@ public class Concierto {
         } while (confirmacion!=true);
         in.close();
         return c;         
-       
+    }
+    public Actuacion getActuacionByPos(int i){
+        return listaActuaciones.get(i);
     }
 }
 

@@ -13,15 +13,13 @@ import java.util.Scanner;
  * @author DAW102
  */
 public class Reportero {
-    protected long id;
-    private String nombre;
-    private String apellidos; 
-    private String nif;
-    private String numero;
-    private Concierto concierto;
     
+    protected long id; //atributo que sirve para identificar a la actuacion // valores validos numero entero mayor que 0
+    private String nombre; // atributo que almacena el nombre del reportero // una cadena de caracteres de 20 caractarese como maximo no pudiendo contener caracteres numericos 
+    private String apellidos; // atributo que almacena los apellidos del reportero // una cadena de caracteres de 35 caractares como maximo no pudiendo contener caracteres numericos
+    private String nif; // atributo que alamcena el niof del reportero // seran 8 numeros y una letra al final ej 12345678A
+    private String numero; // atributo que guarda el numero de telefono del reportero // una cadena de 9 caracteres siempre ademas de ser numeros. ej 123456789
     
-
     public Reportero() {
     }
     
@@ -42,7 +40,7 @@ public class Reportero {
         }
         return LRP;
     }*/
-    
+
     
 
     public long getId() {
@@ -85,20 +83,18 @@ public class Reportero {
         this.numero = numero;
     }
 
-    public Concierto getConcierto() {
-        return concierto;
-    }
-
-    public void setConcierto(Concierto concierto) {
-        this.concierto = concierto;
-    }
-
-    public Reportero(String nombre, String apellidos, String nif, String numero, Concierto concierto) {
+    public Reportero(String nombre, String apellidos, String nif, String numero) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nif = nif;
         this.numero = numero;
-        this.concierto = concierto;
+    }
+
+    public Reportero(Reportero reportero) {
+        this.nombre = reportero.getNombre();
+        this.apellidos = reportero.getApellidos();
+        this.nif = reportero.getNif();
+        this.numero =reportero.getNif();
     }
 
     
@@ -131,7 +127,7 @@ public class Reportero {
         return nuevaListaReportero;
     }
     
-    public Reportero nuevoReportero(){
+    public static Reportero nuevoReportero(){
         Reportero reportero=new Reportero();
         Scanner in=new Scanner(System.in);
         boolean confirmacion; 
@@ -151,4 +147,5 @@ public class Reportero {
         in.close();
         return reportero;
     }
+    
 }

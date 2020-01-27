@@ -129,4 +129,8 @@ public class Gira {
     in.close();
     return gira;
     }
+    
+    public Concierto getConciertoByPos(int i){
+        return listaConciertos.get(i);
+    }
 }

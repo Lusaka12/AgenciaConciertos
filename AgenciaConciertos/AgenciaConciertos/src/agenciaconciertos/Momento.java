@@ -14,20 +14,31 @@ import java.util.Scanner;
  */
 public class Momento {
     protected  long id;//atributo que sirve para identificar a la momento //  valores validos numero entero mayor que 0
-    private Date hora;//
-    private String descripcion;
-    private Reportero reportero;
+    private Date hora;//Fecha de tipo util.date que guarda la fecha en la que el reportero documenta la actuacion // los valores validos para este campo seran posteriores a la fecha del concierto pero no mas de un dia. 
+    private String descripcion;//descripcion del momento que rellenara el reportero// los valores validos seran una cadena de 150 caracteres como maximo 
+    private Reportero reportero; // Objeto que guardara que reportero ha documentado el momento // valores validos un objeto del reportero que captura el momento
+    private Actuacion actuacion; // la actuacion a la cual se esta documentando // valores validos un objeto de la actuacion
     
-    public Momento(Date hora, String descripcion, Reportero reportero) {
+    public Momento(Date hora, String descripcion, Reportero reportero,Actuacion actuacion) {
         this.hora = hora;
         this.descripcion = descripcion;
         this.reportero= reportero;
+        this.actuacion=actuacion;
     }
     public Momento(Momento m) {
         this.hora = m.getHora();
         this.descripcion = m.getDescripcion();
         this.reportero= m.getReportero();
+        this.actuacion=m.getActuacion();
     } 
+
+    public Actuacion getActuacion() {
+        return actuacion;
+    }
+
+    public void setActuacion(Actuacion actuacion) {
+        this.actuacion = actuacion;
+    }
     public Momento(){
     }
 
@@ -81,7 +92,12 @@ public class Momento {
             System.out.println("Descibe el momento");
             momento.setDescripcion(sc.next());
             System.out.println("Dime el DNI del reportero que hizo el momento");
-            //momento.setReportero((sc.next()))
+            Reportero rep=BaseDatos.buscaReporteroByNIF(sc.nextLine());
+            if(rep!=null){
+                momento.setReportero(rep);
+            }else{
+                //el reportero con el nif aportado no existe
+            }
             confirmacion=ToolBox.readBoolean();
         } while (!confirmacion);
         return momento;

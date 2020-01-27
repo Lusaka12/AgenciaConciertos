@@ -20,7 +20,6 @@ public class Artista {
     protected long id;//atributo que sirve para identificar al artista |  valores validos numero entero mayor que 0
     private String  nombreArtistico; //nombre artistico del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
     private String generoMusica; //genero de musica del artista | valores validos cadena de caracteres de 20 caracteres pudiendo tener simbolos y numeros
-    private ArrayList<Actuacion> ListaActuaciones;
     public long getId() {
         return id;
     }
@@ -31,14 +30,6 @@ public class Artista {
 
     public String getGeneroMusica() {
         return generoMusica;
-    }
-
-    public ArrayList<Actuacion> getListaActuaciones() {
-        return ListaActuaciones;
-    }
-
-    public void setListaActuaciones(ArrayList<Actuacion> ListaActuaciones) {
-        this.ListaActuaciones = ListaActuaciones;
     }
 
     public void setId(long id) {
@@ -53,18 +44,16 @@ public class Artista {
         this.generoMusica = generoMusica;
     }
 
-    public Artista(String nombreArtistico, String generoMusica,ArrayList<Actuacion> listaActuaciones) {
+    public Artista(String nombreArtistico, String generoMusica) {
         this.nombreArtistico = nombreArtistico;
         this.generoMusica = generoMusica;
-        this.ListaActuaciones=listaActuaciones;
     }
      public Artista(Artista a) {
         this.nombreArtistico = a.getNombreArtistico();
         this.generoMusica = a.getGeneroMusica();
-        this.ListaActuaciones=a.ListaActuaciones;
     }
     public Artista(){
-        ListaActuaciones=new ArrayList<Actuacion>();
+       
     }
 
     @Override

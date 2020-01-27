@@ -19,6 +19,15 @@ public class Actuacion {
     private int duracion; //numero de minutos que dura la actuacion // valores validos hasta el numero maximo de minutos que dura la actuacion
     private ArrayList<Artista> listaArtistas;//lista de artistas que actuan en la actuacion// valores permitidos minimo 1 y maximo 2
     private long idConcierto;// guarda el concierto de la actuacion
+    private Reportero reportero=null;// Guarda el reportero que cubre esa actuacion.//valores validos un objeto reportero cuando se le asigne un reportero y antes de eso null
+
+    public Reportero getReportero() {
+        return reportero;
+    }
+
+    public void setReportero(Reportero reportero) {
+        this.reportero = reportero;
+    }
     public long getId() {
         return id;
     }
@@ -116,6 +125,28 @@ public class Actuacion {
         }while (confirmacion!=true);
         in.close();
         return actuacion;
+    }
+    /* Metodo que Asigna el reportero a esta actuacion.
+     
+    */
+    public void asignaReporteroActuacion()
+           { //throws formatoNifIncorrecto,reporteroNoExiste
+        if(reportero!=null){
+            //throw new ActuacionYaTieneReporteroAsignado();
+        }
+        Scanner in=new Scanner(System.in);
+        System.out.println("introduzca el nif del reportero: NNNNL N numero L letra");
+        String nif=in.nextLine().trim();
+        char letra=nif.charAt(nif.length()-1);
+        //he puesto tamano 5 por poner uno.
+        if(nif.length()!=5 && "0123456789".indexOf(letra)!=-1){
+            //throw new formatoNifIncorrecto();
+        }
+        Reportero rep=BaseDatos.buscaReporteroByNIF(nif);
+        if(rep==null){
+            //throw new reporteroNoExiste
+        }
+        reportero=rep;
     }
 }
     
