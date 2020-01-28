@@ -23,7 +23,8 @@ public class AgenciaConciertos {
         System.out.println("Seleccione un opcion");
         System.out.println("1. Asigna reportero a actuacion");
         System.out.println("2. Caso de uso 1");
-        System.out.println("3. Caso de uso 2");
+        System.out.println("3. Caso de uso 2: nuevo reportero");
+        System.out.println("4. caso de uso 3");
         int opcion;
         do {
             System.out.println("Introduzca una opcion valida");
@@ -70,6 +71,11 @@ public class AgenciaConciertos {
                 }
                 break;
             case 3:
+                try {
+                    Reportero reportero = Reportero.nuevoReportero();
+                } catch (ReporteroException rE) {
+                    System.out.println("Algo ha fallado");
+                }
                 break;
             default:
                 System.out.println("La el numero selecionado no se corresponde con ningun caso de uso");
