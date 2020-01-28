@@ -7,6 +7,8 @@ package agenciaconciertos;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,14 +38,18 @@ public class Informe {
         this.revisado = revisado;
     }
 
-    public String getDescripcion() throws InformeException {
-        InformeException.validaDescripcion(descripcion);
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) throws InformeException {
-        InformeException.validaDescripcion(descripcion);
-        this.descripcion = descripcion;
+    public void setDescripcion(String descripcion) {
+        try {
+            InformeException.validaDescripcion(descripcion);
+            this.descripcion = descripcion;
+        } catch (InformeException ex) {
+            System.out.println("La descripcion no es correcta" + ex.getMessage());
+            this.descripcion = "";
+        }
     }
 
     public Gira getGira() {
@@ -51,22 +57,53 @@ public class Informe {
     }
 
     public void setGira(Gira gira) {
-        this.gira = gira;
+        try {
+            InformeException.validaGira(gira);
+            this.gira = gira;
+        } catch (InformeException ex) {
+            System.out.println("La gira era null");
+            this.gira = null;
+        }
     }
 
-    public Informe(long id, String descripcion, Gira gira) throws InformeException {
+    public Informe(long id, String descripcion, Gira gira) {
         this.id = id;
         this.revisado = false;
-        InformeException.validaDescripcion(descripcion);
-        this.descripcion = descripcion;
-        this.gira = gira;
+        try {
+            InformeException.validaDescripcion(descripcion);
+            this.descripcion = descripcion;
+        } catch (InformeException ex) {
+            System.out.println("La descripcion no es correcta" + ex.getMessage());
+            this.descripcion = "";
+        }
+
+        try {
+            InformeException.validaGira(gira);
+            this.gira = gira;
+        } catch (InformeException ex) {
+            System.out.println("La gira era null");
+            this.gira = null;
+        }
     }
 
-    public Informe(Informe i) throws InformeException {
+    public Informe(Informe i) {
+        this.id = i.getId();
         this.revisado = i.isRevisado();
-        InformeException.validaDescripcion(descripcion);
-        this.descripcion = i.getDescripcion();
-        this.gira = i.getGira();
+        try {
+            InformeException.validaDescripcion(descripcion);
+            this.descripcion = i.getDescripcion();
+        } catch (InformeException ex) {
+            System.out.println("La descripcion no es correcta" + ex.getMessage());
+            this.descripcion = "";
+        }
+
+        try {
+            InformeException.validaGira(gira);
+            this.gira = i.getGira();
+        } catch (InformeException ex) {
+            System.out.println("La gira era null");
+            this.gira = null;
+        }
     }
 
     public Informe() {
@@ -78,8 +115,7 @@ public class Informe {
         return "Informe{" + "identificador=" + id + ", revisado=" + revisado + ", descripcion=" + descripcion + ",gira=" + gira + '}';
     }
 
-    public String data() throws InformeException {
-        InformeException.validaDescripcion(descripcion);
+    public String data() {
         return this.getId() + "|" + this.isRevisado() + "|" + this.getDescripcion();
 
     }
@@ -106,7 +142,7 @@ public class Informe {
         return nuevaListaInforme;
     }
 
-    public Informe nuevoInforme() throws InformeException {
+    public Informe nuevoInforme() {
         Informe informe = new Informe();
         Scanner in = new Scanner(System.in);
         boolean confirmacion;
@@ -115,11 +151,24 @@ public class Informe {
             informe.setRevisado(ToolBox.readBoolean());
             System.out.println("Añade descripción");
             String descrUser = in.nextLine();
-            InformeException.validaDescripcion(descrUser);
-            informe.setDescripcion(descrUser);
+
+            try {
+                InformeException.validaDescripcion(descrUser);
+                informe.setDescripcion(descrUser);
+            } catch (InformeException ex) {
+                informe.setDescripcion("");
+            }
 
             System.out.println("Introduzca el nombre de la gira");
-            informe.setGira(BaseDatos.buscaGiraByNombre(in.next()));
+            String nombreGira = in.nextLine();
+            Gira g = BaseDatos.buscaGiraByNombre(nombreGira);
+            try {
+                InformeException.validaGira(g);
+                informe.setGira(g);
+            } catch (InformeException ex) {
+                informe.setGira(null);
+            }
+
             confirmacion = ToolBox.readBoolean();
         } while (confirmacion != true);
         in.close();
@@ -133,10 +182,10 @@ public class Informe {
                 this.setRevisado(true);
             }
             System.out.println("El informe " + this.getId() + " ha sido revisado correctamente.");
-            ret=true;
+            ret = true;
         } else {
             System.out.println("No existe el informe.");
-            ret=false;
+            ret = false;
         }
         return ret;
     }
